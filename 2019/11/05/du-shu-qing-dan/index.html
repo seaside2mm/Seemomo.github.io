@@ -1,0 +1,1251 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="读书清单, 计算机视觉、机器人">
+    <meta name="description" content="书籍推荐Android创新实验室(AI+移动互联) 整理制作
+
+声明：所有pdf资源均来自网络，不保证内容与书名匹配，请在阅读之前注意辨识。强烈建议阅读纸质版书籍。
+本项目仅供学习交流使用，如有侵权，烦请告知以便删除。
+
+
+数学(进阶)
+《">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>读书清单 | Home | 桃与海</title>
+    <link rel="icon" type="image/png" href="/medias/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Home | 桃与海</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://seaside2mm.github.io/notebook.github.io/" class="waves-effect waves-light">
+      
+      <i class="fas fa-book-open" style="zoom: 0.6;"></i>
+      
+      <span>笔记本</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Home | 桃与海</div>
+        <div class="logo-desc">
+            
+            有缘网线来相会
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://seaside2mm.github.io/notebook.github.io/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book-open"></i>
+			
+			笔记本
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于我
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        读书清单
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/book/">
+                                <span class="chip bg-color">book</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2019-11-05
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2019-11-05
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    925
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    3 Min
+                </div>
+                
+				
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="书籍推荐"><a href="#书籍推荐" class="headerlink" title="书籍推荐"></a>书籍推荐</h1><p><em>Android创新实验室(AI+移动互联) 整理制作</em></p>
+<blockquote>
+<p>声明：所有pdf资源均来自网络，不保证内容与书名匹配，请在阅读之前注意辨识。强烈建议阅读纸质版书籍。</p>
+<p>本项目仅供学习交流使用，如有侵权，烦请告知以便删除。</p>
+</blockquote>
+<p><img src="./img/bookv2.jpg" alt="BOOK"></p>
+<h2 id="数学-进阶"><a href="#数学-进阶" class="headerlink" title="数学(进阶)"></a>数学(进阶)</h2><ul>
+<li><p>《概率论与数理统计》陈希孺 著<a href="https://pan.baidu.com/s/1eQpMh5C" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《矩阵分析与应用》张贤达<a href="https://vdisk.weibo.com/s/FlmEhSJru6BA-" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《普林斯顿微积分读本》<a href="https://u19794310.ctfile.com/fs/19794310-372441496" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《应用近世代数 第3版》胡冠章 著<a href="http://gen.lib.rus.ec/book/index.php?md5=1AAB5F8A6FA6C8E0F1FCC5EF57FEA27E" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Convex Optimization》by Stephen Boyd<a href="http://www.weiyoou8.com/share/19165079.html" target="_blank" rel="noopener">PDF</a></p>
+</li>
+</ul>
+<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><ul>
+<li><p><strong>C语言</strong></p>
+</li>
+<li><p>《C Primer Plus》(入门 )<a href="https://pan.baidu.com/s/1gdDBP9T" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《C和指针》经典<a href="https://pan.baidu.com/s/1hJPjo" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p><strong>C++</strong></p>
+</li>
+<li><p>《C++ Primer Plus》(适合无C语言基础入门)<a href="https://pan.baidu.com/s/1nv7J92L" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《C++ Primer》(提高)<a href="https://pan.baidu.com/s/1sk21Ahf" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《The C++ Programming Language》权威<a href="https://pan.baidu.com/s/12o2k" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Effective Modern C++》C++11/14<a href="https://pan.baidu.com/s/1ntLAe9b" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Modern C++ Tutorial C++ 11/14/17/20 On the Fly》高速上手C++11/14教程<a href="https://changkun.de/modern-cpp/pdf/modern-cpp-tutorial-zh-cn.pdf" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Exceptional C++：47个C++工程难题、编程问题和解决方案》<a href="http://book.ucdrs.superlib.net/views/specific/2929/bookDetail.jsp?dxNumber=161000060558&d=92343AD49EC75EE09FBD907665AB1873" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p><strong>Java</strong></p>
+</li>
+<li><p>《Head First Java》(入门)<a href="https://pan.baidu.com/s/1qX2ghe0#list/path=%2F" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《疯狂Java讲义》<a href="https://pan.baidu.com/s/12pR78" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Java编程思想》<a href="http://vdisk.weibo.com/s/uvlsIKkNoLEAy" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Java核心技术》<a href="https://pan.baidu.com/s/1o8CY6ro" target="_blank" rel="noopener">PDF1</a>、<a href="https://pan.baidu.com/share/link?shareid=3803014521&uk=4245516461" target="_blank" rel="noopener">PDF2</a></p>
+</li>
+<li><p>《Effective Java》第3版<a href="https://pan.baidu.com/s/12mCVX" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p><strong>Python</strong></p>
+</li>
+<li><p>《Python编程入门到实践[美]》(入门)<a href="https://pan.baidu.com/s/1pKCFlaz" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《流畅的Python》进阶<a href="https://pan.baidu.com/s/1i4ZtSWl" target="_blank" rel="noopener">PDF</a></p>
+</li>
+</ul>
+<h2 id="Android开发"><a href="#Android开发" class="headerlink" title="Android开发"></a>Android开发</h2><ul>
+<li><p>《第一行代码Android》第2版(入门)<a href="https://pan.baidu.com/s/1hrXnSji" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Android编程权威指南》(提升)<a href="https://pan.baidu.com/s/1mgtPkko" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Android开发艺术探索》(进阶)<a href="https://pan.baidu.com/s/1o8iseiI" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Android源码设计模式解析与实战》<a href="https://pan.baidu.com/s/1nuHywnZ" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Kotlin编程权威指南》</p>
+</li>
+<li><p>《Android群英传》<a href="https://pan.baidu.com/s/1c2uNF7U" target="_blank" rel="noopener">PDF</a></p>
+</li>
+</ul>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><ul>
+<li><p>《算法导论》第3版<a href="https://pan.baidu.com/s/1c0lJmPq" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《数据结构与算法分析》经典<a href="https://pan.baidu.com/share/link?shareid=2040099117&uk=2268417160&fid=4143774584" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《多维与度量数据结构基础[美]》<a href="http://book.ucdrs.superlib.net/views/specific/2929/bookDetail.jsp?dxNumber=000008094272&d=0DF294181E398C1CE8E6017AC0BB2D39" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《算法》第4版（Java描述）<a href="http://vdisk.weibo.com/s/AcSJGKVz_XiVt" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《算法笔记》(胡凡，曾磊 编)<a href="https://pan.baidu.com/s/130HH-tWlXxU22HRQ8-lHhA" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《挑战程序设计竞赛》<a href="https://pan.baidu.com/s/1c2GeKik" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《算法竞赛入门经典》第2版<a href="https://pan.baidu.com/s/1c2w0cKC" target="_blank" rel="noopener">PDF</a></p>
+</li>
+</ul>
+<h2 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h2><ul>
+<li><p>《数字图像处理》冈萨雷斯 著<a href="https://pan.baidu.com/s/10eGz6" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《计算机视觉——算法与应用》经典<a href="https://vdisk.weibo.com/s/AcSJGKVz_Xj0s" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《视觉机器学习20讲》<a href="http://book.ucdrs.superlib.net/views/specific/2929/bookDetail.jsp?dxNumber=000015449959&d=2CE333758A3E452AD1455DFF31C7F259" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《视觉SLAM十四讲 从理论到实践》第2版</p>
+</li>
+<li><p>《图像处理、分析与机器视觉》第4版<a href="https://pan.baidu.com/s/10eGz6" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《计算机视觉模型、学习和推理》<a href="http://book.ucdrs.superlib.net/views/specific/2929/bookDetail.jsp?dxNumber=000016661170&d=603652CF34D1D8C13E5F7BCACCA4CFDB" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Multiple view geometry in computer vision》第2版<a href="https://vdisk.weibo.com/s/daQjrTsJChAzC" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p><strong>编程</strong></p>
+</li>
+<li><p>《Python计算机视觉编程》<a href="https://pan.baidu.com/s/1slUtBC5" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《学习OpenCV3》经典</p>
+</li>
+<li><p>《OpenCV3编程入门》(毛星云编)<a href="https://pan.baidu.com/s/1nvg4au9" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《OpenCV算法精解：基于Python与C++》</p>
+</li>
+<li><p>《OpenGL 超级宝典 第五版》<a href="https://pan.baidu.com/s/17R1Vb5hn8RGMngbGbhz_Hw" target="_blank" rel="noopener">PDF-EN</a>、<a href="https://pan.baidu.com/s/1O0louAI021S-OmJq03jf9Q" target="_blank" rel="noopener">PDF-CN</a></p>
+</li>
+<li><p>《OpenGL ES 3.0 编程指南》<a href="https://pan.baidu.com/s/1jCjn4uJfTeeyQsCSveux8Q" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《OpenGL ES 应用开发实践指南 Android 卷》<a href="https://pan.baidu.com/s/1270Db97XJOOuLz5F5022MQ" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《The Book of Shaders》<a href="https://thebookofshaders.com/" target="_blank" rel="noopener">PDF</a></p>
+</li>
+</ul>
+<h3 id="斯坦福大学公开课"><a href="#斯坦福大学公开课" class="headerlink" title="斯坦福大学公开课"></a>斯坦福大学公开课</h3><ul>
+<li>Stanford CS231N</li>
+<li>Stanford CS223B</li>
+</ul>
+<h2 id="机器学习、深度学习"><a href="#机器学习、深度学习" class="headerlink" title="机器学习、深度学习"></a>机器学习、深度学习</h2><ul>
+<li><p>《机器学习》周志华 著<a href="https://pan.baidu.com/s/1KefCMHg8yfRWf4HkxZJvZw" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《统计学习方法 第二版》李航 著<a href="https://vdisk.weibo.com/s/sLX7IJK7Id7D" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《统计机器学习导论[日]》</p>
+</li>
+<li><p>《Deep Learning》(花书)<a href="https://pan.baidu.com/s/1jIkLkIM" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《图解机器学习[日]》<a href="https://pan.baidu.com/s/1kUCWXYB" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p><strong>编程</strong></p>
+</li>
+<li><p>《Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow》第二版(快速上手)<a href="http://gen.lib.rus.ec/book/index.php?md5=064323EFDE7FEF1A89B38E60F508E324" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《深度有趣》在线项目<a href="https://github.com/Honlan/DeepInterests" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《21个项目玩转深度学习：基于TensorFlow的实践讲解》<a href="http://vdisk.weibo.com/s/b643JsWsSRm51" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《TensorFlow：实战Google深度学习框架》</p>
+</li>
+</ul>
+<h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><ul>
+<li><p>《强化学习精要：核心算法与TensorFlow实现》<a href="">PDF</a></p>
+</li>
+<li><p>《Reinforcement Learning：An Introduction》第2版<a href="https://pan.baidu.com/s/134Pnt96xuzCKDtjeGH0vrQ" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Algorithm for Reinforcement Learning》by Csaba Szepesvari<a href="https://vdisk.weibo.com/s/z0ugys1Iva5bM" target="_blank" rel="noopener">PDF</a></p>
+</li>
+</ul>
+<h2 id="计算机科学兴趣读物"><a href="#计算机科学兴趣读物" class="headerlink" title="计算机科学兴趣读物"></a>计算机科学兴趣读物</h2><ul>
+<li><p>《数学之美》<a href="https://pan.baidu.com/s/1jGFY0rc" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《离散数学及其应用》<a href="https://pan.baidu.com/s/11D8P7" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《具体数学》<a href="https://u15169360.ctfile.com/fs/15169360-371634232" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《组合数学》<a href="https://pan.baidu.com/s/1wtZY" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《深入理解计算机系统》<a href="https://pan.baidu.com/s/12hlxZ" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《一个64位操作系统的设计与实现》</p>
+</li>
+<li><p>《计算机科学导论》</p>
+</li>
+</ul>
+<h2 id="大数据"><a href="#大数据" class="headerlink" title="大数据"></a>大数据</h2><ul>
+<li><p>《Spark快速大数据分析[美]》<a href="https://u15169360.ctfile.com/fs/15169360-371377135" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《MongoDB权威指南》第2版<a href="https://pan.baidu.com/s/1qWlDhbI" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《数据算法：Hadoop/Spark大数据处理技巧》<a href="http://book.ucdrs.superlib.net/views/specific/2929/bookDetail.jsp?dxNumber=000016213214&d=727B0D16DC1C0DE09BEC935AD4DD551F" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Hadoop权威指南：大数据的存储与分析》<a href="http://book.ucdrs.superlib.net/views/specific/2929/bookDetail.jsp?dxNumber=000016651684&d=8DF3F5F0A7B975F0F7AC6B3CBEB3026F" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《高性能MySQL》第3版<a href="https://pan.baidu.com/s/1o6jt2WE" target="_blank" rel="noopener">PDF</a></p>
+</li>
+</ul>
+<h2 id="数据挖掘"><a href="#数据挖掘" class="headerlink" title="数据挖掘"></a>数据挖掘</h2><ul>
+<li><p>《数据挖掘导论》第2版<a href="http://home.ustc.edu.cn/~jw1992/book/introduction_to_DM.pdf" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《Python数据分析与挖掘实战》<a href="https://vdisk.weibo.com/s/b643JsWsSRlWe" target="_blank" rel="noopener">PDF</a></p>
+</li>
+<li><p>《数据挖掘与预测分析》(R语言)<a href="http://book.ucdrs.superlib.net/views/specific/2929/bookDetail.jsp?dxNumber=000016524217&d=8CE4E3CD71147B5314575AA8A9AB319C" target="_blank" rel="noopener">PDF</a></p>
+</li>
+</ul>
+<blockquote>
+<p>书很多，请不要把时间浪费在选择哪本书上。如果你选择困难，就按顺序读吧。</p>
+</blockquote>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://seaside2mm.github.io" rel="external nofollow noreferrer">BY Seaside</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://seaside2mm.github.io/2019/11/05/du-shu-qing-dan/">https://seaside2mm.github.io/2019/11/05/du-shu-qing-dan/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="https://seaside2mm.github.io" target="_blank">BY Seaside</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/book/">
+                                    <span class="chip bg-color">book</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'f1cbbbb693b707b84879',
+        clientSecret: '7edf862377acbbf3b488f294c16808ffac8961a7',
+        repo: 'seaside2mm.github.io',
+        owner: 'seaside2mm',
+        admin: "https://seaside2mm.github.io/",
+        id: '2019-11-05T20-17-16',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2019/11/05/du-shu-qing-dan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="读书清单">
+                        
+                        <span class="card-title">读书清单</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            书籍推荐Android创新实验室(AI+移动互联) 整理制作
+
+声明：所有pdf资源均来自网络，不保证内容与书名匹配，请在阅读之前注意辨识。强烈建议阅读纸质版书籍。
+本项目仅供学习交流使用，如有侵权，烦请告知以便删除。
+
+
+数学(进阶)
+《
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            BY Seaside
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/book/">
+                        <span class="chip bg-color">book</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/11/04/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhang Baihui
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="https://seaside2mm.github.io" target="_blank">Zhang Baihui</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "11";
+                    var startDate = "4";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
