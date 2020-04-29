@@ -370,14 +370,14 @@ Prepare
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    557
+                    718
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    3 Min
                 </div>
                 
 				
@@ -448,16 +448,27 @@ hexo d #部署到github</code></pre>
 <h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><p><a href="https://bestzuo.cn/posts/blog-establish.html" target="_blank" rel="noopener">https://bestzuo.cn/posts/blog-establish.html</a></p>
 <p>增加网址logo</p>
 <p>增加阅读人数</p>
-<h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><ul>
-<li><p>新建文章</p>
-<p>hexo new post <title></p>
-</li>
-<li><p>设置文章摘要</p>
-</li>
-</ul>
-<pre><code>以上是文章摘要
-&lt;!--more--&gt;
-以下是余下全文</code></pre><p><a href="https://myyerrol.io/zh-cn/2017/03/31/hexo_tutorial_1_installation_and_configuration/" target="_blank" rel="noopener">https://myyerrol.io/zh-cn/2017/03/31/hexo_tutorial_1_installation_and_configuration/</a></p>
+<h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><p>首页显示摘要，next主题的官方就有给出<a href="http://theme-next.iissnan.com/faqs.html#首页显示文章摘录" target="_blank" rel="noopener">三种方法</a>，本文详细介绍的就是其中一种。并附上个人的markdown文章头部模板。</p>
+<h2 id="next主题官方给的三种生成摘要方式"><a href="#next主题官方给的三种生成摘要方式" class="headerlink" title="next主题官方给的三种生成摘要方式"></a>next主题官方给的三种生成摘要方式</h2><ol>
+<li>在文章中使用\手动进行截断，Hexo 提供的方式(推荐)</li>
+<li>在文章的 <a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="noopener">front-matter</a> 中添加 description，并提供文章摘录</li>
+<li>自动形成摘要，在主题配置文件中添加，默认截取的长度为 150字符，可以根据需要自行设定：</li>
+</ol>
+<pre><code>auto_excerpt:
+  enable: true
+  length: 150</code></pre><h2 id="文章模板"><a href="#文章模板" class="headerlink" title="文章模板"></a>文章模板</h2><pre><code>---
+title: git的基本使用
+date: 2017-01-24
+categories:
+- 学习
+- git
+tags:
+  - git
+---
+
+&lt;img src=&quot;/img/git.png&quot; width = &quot;900&quot; height = &quot;600&quot; alt=&quot;git&quot; align=center /&gt;
+摘要内容......
+&lt;!-- more --&gt;</code></pre><p><a href="https://myyerrol.io/zh-cn/2017/03/31/hexo_tutorial_1_installation_and_configuration/" target="_blank" rel="noopener">https://myyerrol.io/zh-cn/2017/03/31/hexo_tutorial_1_installation_and_configuration/</a></p>
 <h1 id="遇见的一些问题"><a href="#遇见的一些问题" class="headerlink" title="遇见的一些问题"></a>遇见的一些问题</h1><ul>
 <li>部署后没有样式</li>
 </ul>
