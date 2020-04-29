@@ -370,7 +370,7 @@ Prepare
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    718
+                    782
                 </div>
                 
 
@@ -466,7 +466,6 @@ tags:
   - git
 ---
 
-&lt;img src=&quot;/img/git.png&quot; width = &quot;900&quot; height = &quot;600&quot; alt=&quot;git&quot; align=center /&gt;
 摘要内容......
 &lt;!-- more --&gt;</code></pre><p><a href="https://myyerrol.io/zh-cn/2017/03/31/hexo_tutorial_1_installation_and_configuration/" target="_blank" rel="noopener">https://myyerrol.io/zh-cn/2017/03/31/hexo_tutorial_1_installation_and_configuration/</a></p>
 <h1 id="遇见的一些问题"><a href="#遇见的一些问题" class="headerlink" title="遇见的一些问题"></a>遇见的一些问题</h1><ul>
@@ -486,6 +485,21 @@ permalink_defaults:</code></pre>
 <pre class=" language-md"><code class="language-md">title: tags
 date: 2019-11-02 15:42:36
 type: "tags" layout: "tags"</code></pre>
+<ul>
+<li>hexo中插入数学公式</li>
+</ul>
+<pre><code>$ npm install hexo-math --save</code></pre><p>在站点配置文件 <em>_config.yml</em> 中添加：</p>
+<pre><code>math:
+  engine: &#39;mathjax&#39; # or &#39;katex&#39;
+  mathjax:
+    # src: custom_mathjax_source
+    config:
+      # MathJax config</code></pre><p>在 next 主题配置文件中 <em>themes/next-theme/_config.yml</em> 中将 mathJax 设为 true:</p>
+<pre><code># MathJax Support
+mathjax:
+  enable: true
+  per_page: false
+  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</code></pre><p><a href="http://stevenshi.me/2017/06/26/hexo-insert-formula/" target="_blank" rel="noopener">http://stevenshi.me/2017/06/26/hexo-insert-formula/</a></p>
 <h1 id="魔改"><a href="#魔改" class="headerlink" title="魔改"></a>魔改</h1><p><a href="https://pengloo53.gitbooks.io/hexo/content/" target="_blank" rel="noopener">https://pengloo53.gitbooks.io/hexo/content/</a></p>
 
             </div>
