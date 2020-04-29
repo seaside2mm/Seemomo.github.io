@@ -413,6 +413,41 @@ $(function () {
                     
 
                     
+                        <link rel="stylesheet" href="/libs/dplayer/DPlayer.min.css">
+<div class="video-player">
+    
+    <div class="title center-align">
+        <i class="fas fa-video-camera"></i>&nbsp;&nbsp;精彩视频
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="dplayer" class="dplayer-video"
+                    ></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/dplayer/DPlayer.min.js"></script>
+<script>
+    $(function () {
+        new DPlayer({
+            container: document.getElementById('dplayer'),
+            autoplay: 'false' === 'true',
+            theme: '#42b983',
+            loop: 'false' === 'true',
+            lang: 'zh-cn' === 'zh-CN' ? 'zh-cn' : 'en',
+            preload: 'auto',
+            volume: Number('0.7'),
+            video: {
+                url: '',
+                pic: '',
+                thumbnails: ''
+            }
+        });
+    });
+</script>
+                    
 
                     <div id="recommend-sections" class="recommend">
                         
@@ -486,23 +521,22 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/04/29/2020/python-zhi-guan-hua-zheng-tai-fen-bu-yu-qia-fang-fen-bu-de-guan-xi/">
+                    <a href="/2020/04/29/2020/python-de-zheng-tai-fen-bu-zai-ren-shi/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="【统计】python直观化正态分布与卡方分布的关系">
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【统计】python的正态分布再认识">
                             
-                            <span class="card-title">【统计】python直观化正态分布与卡方分布的关系</span>
+                            <span class="card-title">【统计】python的正态分布再认识</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                原文来源：https://qiita.com/kenmatsu4/items/b6318d66fcfe78b84d83
+                                原文来源：https://qiita.com/kenmatsu4/items/74b8a9f696507af410a4
 
-这是统计学可视化系列的第三弹。
-卡方分布嘛回事在AB检验中经常使用的是卡方分布（chi-square distribu
+在统计学中，正态分布起着非常重要的作用。 表示正态分布（密度函数）的公式为$${\Phi(x) = \frac{1}{
                             
                         </div>
                         <div class="publish-info">
@@ -536,22 +570,23 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/04/29/2020/python-de-zheng-tai-fen-bu-zai-ren-shi/">
+                    <a href="/2020/04/29/2020/python-zhi-guan-hua-zheng-tai-fen-bu-yu-qia-fang-fen-bu-de-guan-xi/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【统计】python的正态分布再认识">
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="【统计】python直观化正态分布与卡方分布的关系">
                             
-                            <span class="card-title">【统计】python的正态分布再认识</span>
+                            <span class="card-title">【统计】python直观化正态分布与卡方分布的关系</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                原文来源：https://qiita.com/kenmatsu4/items/74b8a9f696507af410a4
+                                原文来源：https://qiita.com/kenmatsu4/items/b6318d66fcfe78b84d83
 
-在统计学中，正态分布起着非常重要的作用。 表示正态分布（密度函数）的公式为$${\Phi(x) = \frac{1}{
+这是统计学可视化系列的第三弹。
+卡方分布嘛回事在AB检验中经常使用的是卡方分布（chi-square distribu
                             
                         </div>
                         <div class="publish-info">
@@ -673,48 +708,6 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/11/04/2019/shu-mei-pai-shang-shou/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                            
-                            <span class="card-title">Hello World</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                VNC方式连接树莓派VNC服务器
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install tightvncserver
-
-tightvncserver
-#开启服务器
-vnc
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Zhang Baihui
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
                     <a href="/2019/11/04/2019/matlab-shi-xian-juan-ji-cao-zuo/">
                         <div class="card-image">
                             
@@ -783,6 +776,48 @@ University of Amsterdam
 3
 104
 Eindhoven University of 
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-04
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Zhang Baihui
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/11/04/2019/shu-mei-pai-shang-shou/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                            
+                            <span class="card-title">Hello World</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                VNC方式连接树莓派VNC服务器
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install tightvncserver
+
+tightvncserver
+#开启服务器
+vnc
                             
                         </div>
                         <div class="publish-info">
