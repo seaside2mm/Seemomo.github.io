@@ -219,6 +219,19 @@ Prepare
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -363,14 +376,14 @@ Prepare
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-04-29
+                    2020-04-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    782
+                    732
                 </div>
                 
 
@@ -413,11 +426,7 @@ hexo install
 hexo g 
 hexo s
 hexo d #部署到github</code></pre>
-<h1 id="Freemind主题"><a href="#Freemind主题" class="headerlink" title="Freemind主题"></a>Freemind主题</h1><p><a href="https://www.hahack.com/codes/hexo-theme-freemind/" target="_blank" rel="noopener">freemind插件以及配置</a></p>
-<ul>
-<li>一些留意问题</li>
-</ul>
-<h1 id="wixo主题"><a href="#wixo主题" class="headerlink" title="wixo主题"></a>wixo主题</h1><p>为了增加wiki的layout，着实花了一番功夫。</p>
+<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><h2 id="wixo主题"><a href="#wixo主题" class="headerlink" title="wixo主题"></a>wixo主题</h2><p>为了增加wiki的layout，着实花了一番功夫。</p>
 <p>最后其实很简单搞定。</p>
 <ol>
 <li>新建wiki页面</li>
@@ -434,7 +443,7 @@ hexo d #部署到github</code></pre>
 <p>原wixo项目所有文章都会显示。为了避免，参考<a href="http://perthcharles.github.io/2015/01/17/how-to-hack-hexo/" target="_blank" rel="noopener">这篇</a>，在wiki.ejs中15行，37行分布添加</p>
 <pre class=" language-ejs"><code class="language-ejs"><% if(cat.name.substring(0, 5) == 'wiki-') { %>
 <% } %></code></pre>
-<h1 id="matery"><a href="#matery" class="headerlink" title="matery"></a>matery</h1><p><a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/#toc-heading-19" target="_blank" rel="noopener">主题属性</a></p>
+<h2 id="matery"><a href="#matery" class="headerlink" title="matery"></a>matery</h2><p><a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/#toc-heading-19" target="_blank" rel="noopener">主题属性</a></p>
 <p>颜值即是正义。</p>
 <ul>
 <li>插件</li>
@@ -445,9 +454,6 @@ hexo d #部署到github</code></pre>
 <span class="token function">npm</span> i hexo-permalink-pinyin --save
 <span class="token function">npm</span> i --save hexo-wordcount
 <span class="token function">npm</span> <span class="token function">install</span> hexo-generator-feed --save</code></pre>
-<h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><p><a href="https://bestzuo.cn/posts/blog-establish.html" target="_blank" rel="noopener">https://bestzuo.cn/posts/blog-establish.html</a></p>
-<p>增加网址logo</p>
-<p>增加阅读人数</p>
 <h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><p>首页显示摘要，next主题的官方就有给出<a href="http://theme-next.iissnan.com/faqs.html#首页显示文章摘录" target="_blank" rel="noopener">三种方法</a>，本文详细介绍的就是其中一种。并附上个人的markdown文章头部模板。</p>
 <h2 id="next主题官方给的三种生成摘要方式"><a href="#next主题官方给的三种生成摘要方式" class="headerlink" title="next主题官方给的三种生成摘要方式"></a>next主题官方给的三种生成摘要方式</h2><ol>
 <li>在文章中使用\手动进行截断，Hexo 提供的方式(推荐)</li>
@@ -467,28 +473,18 @@ tags:
 ---
 
 摘要内容......
-&lt;!-- more --&gt;</code></pre><p><a href="https://myyerrol.io/zh-cn/2017/03/31/hexo_tutorial_1_installation_and_configuration/" target="_blank" rel="noopener">https://myyerrol.io/zh-cn/2017/03/31/hexo_tutorial_1_installation_and_configuration/</a></p>
-<h1 id="遇见的一些问题"><a href="#遇见的一些问题" class="headerlink" title="遇见的一些问题"></a>遇见的一些问题</h1><ul>
-<li>部署后没有样式</li>
-</ul>
-<p>修改config文件，设置url即可</p>
+&lt;!-- more --&gt;</code></pre><h1 id="Troubleshoot"><a href="#Troubleshoot" class="headerlink" title="Troubleshoot"></a>Troubleshoot</h1><h2 id="部署后没有样式"><a href="#部署后没有样式" class="headerlink" title="部署后没有样式"></a>部署后没有样式</h2><p>修改config文件，设置url即可</p>
 <pre class=" language-md"><code class="language-md">url: [https://XXX.github.io/XXX.github.io/](https://xxx.github.io/XXX.github.io/)
 root: /XXX.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:</code></pre>
-<ul>
-<li>博客分类标签layout没有内容</li>
-</ul>
-<p><code>hexo new page xxx</code>  </p>
+<h2 id="博客分类标签layout没有内容"><a href="#博客分类标签layout没有内容" class="headerlink" title="博客分类标签layout没有内容"></a>博客分类标签layout没有内容</h2><p><code>hexo new page xxx</code>  </p>
 <p>创建layout页面, categories，tags等。source文件夹下生成index文件。</p>
 <p>需要额外添加，如下：</p>
 <pre class=" language-md"><code class="language-md">title: tags
 date: 2019-11-02 15:42:36
 type: "tags" layout: "tags"</code></pre>
-<ul>
-<li>hexo中插入数学公式</li>
-</ul>
-<pre><code>$ npm install hexo-math --save</code></pre><p>在站点配置文件 <em>_config.yml</em> 中添加：</p>
+<h2 id="hexo中插入数学公式"><a href="#hexo中插入数学公式" class="headerlink" title="hexo中插入数学公式"></a>hexo中插入数学公式</h2><pre><code>$ npm install hexo-math --save</code></pre><p>在站点配置文件 <em>_config.yml</em> 中添加：</p>
 <pre><code>math:
   engine: &#39;mathjax&#39; # or &#39;katex&#39;
   mathjax:
@@ -757,37 +753,26 @@ mathjax:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/11/04/2019/bo-shi-yuan-jing/">
+                <a href="/2019/11/04/2019/shu-mei-pai-shang-shou/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="2019/博士愿景">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">2019/博士愿景</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            VNC方式连接树莓派VNC服务器
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install tightvncserver
 
-
-1
-54
-Delft University of Technology
-代尔夫特理工大学
-
-
-
-2
-58
-University of Amsterdam
-阿姆斯特丹大学
-
-
-3
-104
-Eindhoven University of 
+tightvncserver
+#开启服务器
+vnc
                         
                     </div>
                     <div class="publish-info">
@@ -812,7 +797,7 @@ Eindhoven University of
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/03/2020/mo-ban/">
+                <a href="/2019/07/03/2019/2019-07-2-shi-yong-gu-ge-api-xun-lian-zi-ji-jian-ce-qi/">
                     <div class="card-image">
                         
                         
@@ -824,7 +809,14 @@ Eindhoven University of
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            使用谷歌API训练自己检测器0. 快速开始Setup:
+
+Installation
+
+Quick Start:
+
+Quick Start: Jupyter notebook for off-the-shelf inference
+Quick
                         
                     </div>
                     <div class="publish-info">

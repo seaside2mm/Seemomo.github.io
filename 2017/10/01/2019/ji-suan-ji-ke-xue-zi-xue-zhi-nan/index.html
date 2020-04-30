@@ -216,6 +216,19 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -647,7 +660,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/07/03/2019/2019-07-2-shi-yong-gu-ge-api-xun-lian-zi-ji-jian-ce-qi/">
+                <a href="/2019/07/03/2020/mo-ban/">
                     <div class="card-image">
                         
                         
@@ -659,14 +672,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用谷歌API训练自己检测器0. 快速开始Setup:
-
-Installation
-
-Quick Start:
-
-Quick Start: Jupyter notebook for off-the-shelf inference
-Quick
+                            
                         
                     </div>
                     <div class="publish-info">
