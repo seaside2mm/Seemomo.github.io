@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Hexo博客搭建, 计算机视觉、机器人">
-    <meta name="description" content="本来自己已经有一个jekyll博客了，但是偶然看见这个大佬的笔记wiki，就简直看到了自己想要的。加之其配色代码风格，与自己心目中相符，断然决定另起炉灶，放弃这个陪伴几个月的博客，就让它消失在岁月尘光中。
+    <meta name="description" content="本来自己已经有一个jekyll博客了，但是偶然看见这个大佬的笔记wiki，就简直看到了自己想要的。加之其配色代码风格，与自己心目中相符，断然决定另起炉灶，放弃陪伴几个月的博客，就让它消失在岁月尘光中。
 准备工作
 Prepare
 
-下载n">
+下载nvm">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -383,14 +383,14 @@ Prepare
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    732
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    5 Min
                 </div>
                 
 				
@@ -406,7 +406,7 @@ Prepare
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本来自己已经有一个jekyll博客了，但是偶然看见<a href="https://www.hahack.com/" target="_blank" rel="noopener">这个大佬</a>的笔记wiki，就简直看到了自己想要的。加之其配色代码风格，与自己心目中相符，断然决定另起炉灶，放弃<a href="https://seaside2mm.github.io/">这个</a>陪伴几个月的博客，就让它消失在岁月尘光中。</p>
+                <p>本来自己已经有一个jekyll博客了，但是偶然看见<a href="https://www.hahack.com/" target="_blank" rel="noopener">这个大佬</a>的笔记wiki，就简直看到了自己想要的。加之其配色代码风格，与自己心目中相符，断然决定另起炉灶，放弃陪伴几个月的博客，就让它消失在岁月尘光中。</p>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
 <li>Prepare</li>
 </ul>
@@ -455,7 +455,7 @@ hexo d #部署到github</code></pre>
 <span class="token function">npm</span> i --save hexo-wordcount
 <span class="token function">npm</span> <span class="token function">install</span> hexo-generator-feed --save</code></pre>
 <h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><p>首页显示摘要，next主题的官方就有给出<a href="http://theme-next.iissnan.com/faqs.html#首页显示文章摘录" target="_blank" rel="noopener">三种方法</a>，本文详细介绍的就是其中一种。并附上个人的markdown文章头部模板。</p>
-<h2 id="next主题官方给的三种生成摘要方式"><a href="#next主题官方给的三种生成摘要方式" class="headerlink" title="next主题官方给的三种生成摘要方式"></a>next主题官方给的三种生成摘要方式</h2><ol>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><ol>
 <li>在文章中使用\手动进行截断，Hexo 提供的方式(推荐)</li>
 <li>在文章的 <a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="noopener">front-matter</a> 中添加 description，并提供文章摘录</li>
 <li>自动形成摘要，在主题配置文件中添加，默认截取的长度为 150字符，可以根据需要自行设定：</li>
@@ -473,7 +473,41 @@ tags:
 ---
 
 摘要内容......
-&lt;!-- more --&gt;</code></pre><h1 id="Troubleshoot"><a href="#Troubleshoot" class="headerlink" title="Troubleshoot"></a>Troubleshoot</h1><h2 id="部署后没有样式"><a href="#部署后没有样式" class="headerlink" title="部署后没有样式"></a>部署后没有样式</h2><p>修改config文件，设置url即可</p>
+&lt;!-- more --&gt;</code></pre><h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><p><a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/tag-plugins.html</a></p>
+<ul>
+<li>引用块</li>
+</ul>
+<p>在文章中插入引言，可包含作者、来源和标题。</p>
+<pre><code>{% blockquote [author[, source]] [link] [source_link_title] %}
+content
+{% endblockquote %}</code></pre><blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
+<footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank" rel="noopener">Welcome to Island Marketing</a></cite></footer></blockquote>
+
+<ul>
+<li>视频</li>
+</ul>
+<pre><code>{% youtube video_id %}</code></pre><h3 id="Bootstrap-Callout"><a href="#Bootstrap-Callout" class="headerlink" title="Bootstrap Callout"></a>Bootstrap Callout</h3><p>`{% note class_name %} Content (md partial supported) {% endnote %}`
+
+其中，class_name 可以是以下列表中的一个值：
+
+- default
+- primary
+- success
+- info
+- warning
+- danger
+
+示例代码：
+
+```md
+{% note primary%}  这是primary 效果{% endnote%}</p>
+{% note success%}  这是success 效果{% endnote%}
+```
+
+{% note primary%}  这是primary 效果{% endnote%}
+{% note success%}  这是success 效果{% endnote%}
+
+<h1 id="Troubleshoot"><a href="#Troubleshoot" class="headerlink" title="Troubleshoot"></a>Troubleshoot</h1><h2 id="部署后没有样式"><a href="#部署后没有样式" class="headerlink" title="部署后没有样式"></a>部署后没有样式</h2><p>修改config文件，设置url即可</p>
 <pre class=" language-md"><code class="language-md">url: [https://XXX.github.io/XXX.github.io/](https://xxx.github.io/XXX.github.io/)
 root: /XXX.github.io/
 permalink: :year/:month/:day/:title/
@@ -496,8 +530,43 @@ mathjax:
   enable: true
   per_page: false
   cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</code></pre><p><a href="http://stevenshi.me/2017/06/26/hexo-insert-formula/" target="_blank" rel="noopener">http://stevenshi.me/2017/06/26/hexo-insert-formula/</a></p>
+<h2 id="wixo-中支持-Mathjax"><a href="#wixo-中支持-Mathjax" class="headerlink" title="wixo 中支持 Mathjax"></a>wixo 中支持 Mathjax</h2><p>在 hexo 中，你会发现我们不能用 <code>Latex</code> 语法来书写数学公式，这对于书写学术博客来说是很大的不便，因为我们会经常碰到很多的数学公式推导，但是我们可以通过安装第三方库来解决这一问题。</p>
+<p> 第一步： 使用Kramed代替 Marked</p>
+<p><code>hexo</code> 默认的渲染引擎是 <code>marked</code>，但是 <code>marked</code> 不支持 <code>mathjax</code>。 <code>kramed</code> 是在 <code>marked</code> 的基础上进行修改。我们在工程目录下执行以下命令来安装 <code>kramed</code>.</p>
+<pre><code>npm uninstall hexo-renderer-marked --save
+npm install hexo-renderer-kramed --save</code></pre><p>然后，更改/node_modules/hexo-renderer-kramed/lib/renderer.js，更改：</p>
+<pre><code>// Change inline math rule
+function formatText(text) {
+    // Fit kramed&#39;s rule: $$ + \1 + $$
+    return text.replace(/`\$(.*?)\$`/g, &#39;$$$$$1$$$$&#39;);
+}</code></pre><p>为：</p>
+<pre><code>// Change inline math rule
+function formatText(text) {
+    return text;
+}</code></pre><p>第二步: 停止使用 hexo-math</p>
+<p>首先，如果你已经安装 <code>hexo-math</code>, 请卸载它：</p>
+<pre><code>npm uninstall hexo-math --save</code></pre><p>然后安装 <a href="https://github.com/phoenixcw/hexo-renderer-mathjax" target="_blank" rel="noopener">hexo-renderer-mathjax</a> 包：</p>
+<pre><code>npm install hexo-renderer-mathjax --save</code></pre><p> 第三步: 更新 Mathjax 的 CDN 链接</p>
+<p>首先，打开/node_modules/hexo-renderer-mathjax/mathjax.html</p>
+<p>然后，把``更改为：</p>
+<pre><code>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;&lt;/script&gt;</code></pre><p>第四步: 更改默认转义规则</p>
+<p>因为 <code>hexo</code> 默认的转义规则会将一些字符进行转义，比如 <code>_</code> 转为 ``, 所以我们需要对默认的规则进行修改.<br>首先， 打开&lt;path-to-your-project/node_modules/kramed/lib/rules、inline.js,</p>
+<p>然后，把:</p>
+<pre><code>escape: /^\\([\\`*{}\[\]()#$+\-.!_&gt;])/,</code></pre><p>更改为:</p>
+<pre><code>escape: /^\\([`*\[\]()# +\-.!_&gt;])/,</code></pre><p>把</p>
+<pre><code>em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</code></pre><p>更改为:</p>
+<pre><code>em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</code></pre><p>第五步: 开启mathjax</p>
+<p>在主题 <code>_config.yml</code> 中开启 Mathjax， 找到 <code>mathjax</code> 字段添加如下代码：</p>
+<pre><code>mathjax:
+    enable: true</code></pre><p>这一步可选，在博客中开启 <code>Mathjax</code>，， 添加以下内容：</p>
+<pre><code>---
+title: Testing Mathjax with Hexo
+category: Uncategorized
+date: 2017/05/03
+mathjax: true
+---</code></pre><p>通过以上步骤，我们就可以在 <code>hexo</code> 中使用 <code>Mathjax</code> 来书写数学公式。</p>
 <h1 id="魔改"><a href="#魔改" class="headerlink" title="魔改"></a>魔改</h1><p><a href="https://pengloo53.gitbooks.io/hexo/content/" target="_blank" rel="noopener">https://pengloo53.gitbooks.io/hexo/content/</a></p>
-
+<h2 id="插入音视频"><a href="#插入音视频" class="headerlink" title="插入音视频"></a>插入音视频</h2>
             </div>
             <hr/>
 
@@ -937,7 +1006,7 @@ Quick
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -949,7 +1018,7 @@ Quick
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 

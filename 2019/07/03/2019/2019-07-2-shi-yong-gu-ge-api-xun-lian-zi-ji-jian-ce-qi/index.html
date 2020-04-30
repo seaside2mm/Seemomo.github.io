@@ -763,11 +763,11 @@ label_map_path: &quot;/usr/home/username/data/label_map.pbtxt&quot;</code></pre>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本来自己已经有一个jekyll博客了，但是偶然看见这个大佬的笔记wiki，就简直看到了自己想要的。加之其配色代码风格，与自己心目中相符，断然决定另起炉灶，放弃这个陪伴几个月的博客，就让它消失在岁月尘光中。
+                            本来自己已经有一个jekyll博客了，但是偶然看见这个大佬的笔记wiki，就简直看到了自己想要的。加之其配色代码风格，与自己心目中相符，断然决定另起炉灶，放弃陪伴几个月的博客，就让它消失在岁月尘光中。
 准备工作
 Prepare
 
-下载n
+下载nvm
                         
                     </div>
                     <div class="publish-info">
@@ -933,7 +933,7 @@ Prepare
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             // headingsOffset: -205,
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -945,7 +945,7 @@ Prepare
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
