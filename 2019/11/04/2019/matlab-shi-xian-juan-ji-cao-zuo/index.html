@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="MATLAB 实现函数卷积演示动画, 计算机视觉、机器人">
     <meta name="description" content="前置知识图解法求卷积函数的卷积:$$f_1(t) * f_2(t) = \int _{-\infty}^{\infty} f_1(\tau)f_2(t-\tau) d\tau$$
 使用图解法，将卷积运算中一些抽象的关系形象化。具体有以下几个">
@@ -27,11 +27,12 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -110,6 +111,69 @@
       
       <span>关于我</span>
     </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
     
   </li>
   
@@ -201,6 +265,72 @@
 			
 			关于我
 		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/musics " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/movies " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/books " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/galleries " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+               
+            </ul>
           
         </li>
         
@@ -376,7 +506,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    860
+                    866
                 </div>
                 
 
@@ -409,67 +539,12 @@
 <li>积分：两个信号在该点重叠部分的面积$\int _{-\infty} ^{\infty}f_1(t-\tau)f_2(\tau) d\tau$ 即为 $f_1∗f_2$ 在点 t 处的函数值</li>
 </ol>
 <h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>让我们首先定义一下我们要卷积的函数。假设我们有了两个函数$f_1(t) = u(t) - u(t-2), f_2(t) = u(t-1) - u(t-3)$, 要用图解法求 $f_1∗f_2$.</p>
-<pre class=" language-matlab"><code class="language-matlab">syms t<span class="token punctuation">;</span>
-f1 <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">2</span> <span class="token operator">*</span> t <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token function">heaviside</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">heaviside</span><span class="token punctuation">(</span>t <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-f2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token operator">/</span><span class="token number">2</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token function">heaviside</span><span class="token punctuation">(</span>t <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">heaviside</span><span class="token punctuation">(</span>t <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-d <span class="token operator">=</span> <span class="token number">0.1</span><span class="token punctuation">;</span>
-t1 <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">:</span> d <span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
-t2 <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">2</span> <span class="token operator">:</span> d <span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">syms t;</span><br><span class="line">f1 = <span class="number">1</span>/<span class="number">2</span> * t * (heaviside(t) - heaviside(t - <span class="number">2</span>));</span><br><span class="line">f2 = (<span class="number">1</span> - <span class="number">1</span>/<span class="number">2</span> * (<span class="built_in">abs</span>(t))) * (heaviside(t + <span class="number">2</span>) - heaviside(t - <span class="number">2</span>));</span><br><span class="line">d = <span class="number">0.1</span>;</span><br><span class="line">t1 = <span class="number">0</span> : d : <span class="number">2</span>;</span><br><span class="line">t2 = <span class="number">-2</span> : d : <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">convolution(f1, f2, t1, t2, d);</span><br></pre></td></tr></table></figure>
 
-<span class="token function">convolution</span><span class="token punctuation">(</span>f1<span class="token punctuation">,</span> f2<span class="token punctuation">,</span> t1<span class="token punctuation">,</span> t2<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p><img src="img/000.jpg" alt=""></p>
 <p>实现卷积函数</p>
-<pre class=" language-matlab"><code class="language-matlab"><span class="token keyword">function</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">convolution</span><span class="token punctuation">(</span>f1<span class="token punctuation">,</span> f2<span class="token punctuation">,</span> t1<span class="token punctuation">,</span> t2<span class="token punctuation">,</span> d<span class="token punctuation">)</span>
-    syms t tao<span class="token punctuation">;</span>         <span class="token comment" spellcheck="true">% 定义用于符号计算的变量</span>
-    figure<span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">% 在一个新的窗体上执行绘图</span>
-    grid on<span class="token punctuation">;</span>
-    hold on<span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">% 因为要多用多次 plot 和 fplot，所以要打开 hold</span>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[]</span> = <span class="title">convolution</span><span class="params">(f1, f2, t1, t2, d)</span></span></span><br><span class="line">    syms t tao;         <span class="comment">% 定义用于符号计算的变量</span></span><br><span class="line">    <span class="built_in">figure</span>;             <span class="comment">% 在一个新的窗体上执行绘图</span></span><br><span class="line">    grid on;</span><br><span class="line">    <span class="built_in">hold</span> on;            <span class="comment">% 因为要多用多次 plot 和 fplot，所以要打开 hold</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">% 以下计算，可参照连续信号的卷积函数</span></span><br><span class="line">    time_start = t1(<span class="number">1</span>) + t2(<span class="number">1</span>);                              <span class="comment">% 计算卷积结果序列非 0 值的起始位置</span></span><br><span class="line">    time_length = <span class="built_in">length</span>(t1) + <span class="built_in">length</span>(t2) - <span class="number">2</span>;               <span class="comment">% 计算卷积结果序列非 0 值得宽度</span></span><br><span class="line">    </span><br><span class="line">    f = time_start;                          <span class="comment">% 时域起始位置 from</span></span><br><span class="line">    e = time_start + time_length * d;        <span class="comment">% 时域终止位置 end</span></span><br><span class="line">    ymin = <span class="number">-5</span>;</span><br><span class="line">    ymax = <span class="number">5</span>;</span><br><span class="line">    </span><br><span class="line">    f11 = subs(f1, t, t - tao);             <span class="comment">% 对 f1 进行换元、反折和位移：f1(t) =&gt; f1(tau) =&gt; f1(-tau) =&gt; f1(t-tau)</span></span><br><span class="line">    fplot(f2, [f, e]);                      <span class="comment">% f2 是固定的，可以先画到图上</span></span><br><span class="line">    </span><br><span class="line">    vec = f : d : e;                        <span class="comment">% 生成卷积结果的时域向量</span></span><br><span class="line">    p1 = fplot(f2, [f, e]);                 <span class="comment">% 定义 p1 绘图句柄</span></span><br><span class="line"></span><br><span class="line">    dt = [<span class="number">0</span>];     ft = [<span class="number">0</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">% 循环绘图动画，对于卷积结果的时域向量中的每一个 t，都绘制一张该时刻的图</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : <span class="number">1</span> : <span class="built_in">length</span>(vec)</span><br><span class="line">        f12 = subs(f11, &#123;t tao&#125;, &#123;vec(<span class="built_in">i</span>) t&#125;);   <span class="comment">% 令 t0 = vec(i)，此时 f12 = f1(t0-tau)，即位移量为 t0</span></span><br><span class="line">        f13 = f12 * f2;                         <span class="comment">% 计算位移 t0 后的 f1 与 f2 的相乘结果</span></span><br><span class="line"></span><br><span class="line">        delete(p1);                             <span class="comment">% 先删除上一个 f12 的图像</span></span><br><span class="line">        p1 = fplot(f12, [f e]);                 <span class="comment">% 绘制新的 f12</span></span><br><span class="line">        axis([f, e, ymin, ymax]);</span><br><span class="line">        set(p1, <span class="string">'Color'</span>, <span class="string">'r'</span>);</span><br><span class="line"></span><br><span class="line">        f14 = int(f13, f, e);                   <span class="comment">% 计算积分值，即为在 t 时刻的 f1*f2 值</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">% 为了使得绘出的图像平滑，将当前的 (t, f14) 添加到数组（向量）中，然后调用 plot 就可以绘出光滑的曲线</span></span><br><span class="line">        <span class="comment">% 否则，只调用 plot(t, f14) 只能绘出散点图</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">% 并且，填充曲线下方到 x 轴的区域。根据简单的几何知识，因为间隔 d 足够小，所以只要填充一个梯形即可</span></span><br><span class="line">        <span class="comment">% 设当前的 t 值为 v(i)，当前函数值为 f(i)，那么只要填充梯形 (v(i), f(i)), (v(i), 0), (v(i-1), 0), (v(i-1), f(i-1)) 即可</span></span><br><span class="line">        p2 = fill([dt(<span class="built_in">length</span>(dt)), dt(<span class="built_in">length</span>(dt)), vec(<span class="built_in">i</span>), vec(<span class="built_in">i</span>)], [<span class="number">0</span>, ft(<span class="built_in">length</span>(ft)), f14, <span class="number">0</span>], <span class="string">'y'</span>);</span><br><span class="line">        set(p2, <span class="string">'LineStyle'</span>, <span class="string">'none'</span>);</span><br><span class="line">        dt = [dt vec(<span class="built_in">i</span>)];</span><br><span class="line">        ft = [ft f14];</span><br><span class="line"></span><br><span class="line">        <span class="built_in">plot</span>(dt, ft, <span class="string">'-b'</span>);                     <span class="comment">% 最后绘制图形</span></span><br><span class="line">        axis([f e ymin ymax]);</span><br><span class="line">        </span><br><span class="line">        pause(<span class="number">0.0001</span>);                          <span class="comment">% 短暂暂停，产生动画</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
-    <span class="token comment" spellcheck="true">% 以下计算，可参照连续信号的卷积函数</span>
-    time_start <span class="token operator">=</span> <span class="token function">t1</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">t2</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                              <span class="token comment" spellcheck="true">% 计算卷积结果序列非 0 值的起始位置</span>
-    time_length <span class="token operator">=</span> <span class="token function">length</span><span class="token punctuation">(</span>t1<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">length</span><span class="token punctuation">(</span>t2<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span>               <span class="token comment" spellcheck="true">% 计算卷积结果序列非 0 值得宽度</span>
-
-    f <span class="token operator">=</span> time_start<span class="token punctuation">;</span>                          <span class="token comment" spellcheck="true">% 时域起始位置 from</span>
-    e <span class="token operator">=</span> time_start <span class="token operator">+</span> time_length <span class="token operator">*</span> d<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">% 时域终止位置 end</span>
-    ymin <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">;</span>
-    ymax <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
-
-    f11 <span class="token operator">=</span> <span class="token function">subs</span><span class="token punctuation">(</span>f1<span class="token punctuation">,</span> t<span class="token punctuation">,</span> t <span class="token operator">-</span> tao<span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">% 对 f1 进行换元、反折和位移：f1(t) => f1(tau) => f1(-tau) => f1(t-tau)</span>
-    <span class="token function">fplot</span><span class="token punctuation">(</span>f2<span class="token punctuation">,</span> <span class="token punctuation">[</span>f<span class="token punctuation">,</span> e<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                      <span class="token comment" spellcheck="true">% f2 是固定的，可以先画到图上</span>
-
-    vec <span class="token operator">=</span> f <span class="token operator">:</span> d <span class="token operator">:</span> e<span class="token punctuation">;</span>                        <span class="token comment" spellcheck="true">% 生成卷积结果的时域向量</span>
-    p1 <span class="token operator">=</span> <span class="token function">fplot</span><span class="token punctuation">(</span>f2<span class="token punctuation">,</span> <span class="token punctuation">[</span>f<span class="token punctuation">,</span> e<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                 <span class="token comment" spellcheck="true">% 定义 p1 绘图句柄</span>
-
-    dt <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>     ft <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">% 循环绘图动画，对于卷积结果的时域向量中的每一个 t，都绘制一张该时刻的图</span>
-    <span class="token keyword">for</span> <span class="token number">i</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token function">length</span><span class="token punctuation">(</span>vec<span class="token punctuation">)</span>
-        f12 <span class="token operator">=</span> <span class="token function">subs</span><span class="token punctuation">(</span>f11<span class="token punctuation">,</span> <span class="token punctuation">{</span>t tao<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token function">vec</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span> t<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">% 令 t0 = vec(i)，此时 f12 = f1(t0-tau)，即位移量为 t0</span>
-        f13 <span class="token operator">=</span> f12 <span class="token operator">*</span> f2<span class="token punctuation">;</span>                         <span class="token comment" spellcheck="true">% 计算位移 t0 后的 f1 与 f2 的相乘结果</span>
-
-        <span class="token function">delete</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span><span class="token punctuation">;</span>                             <span class="token comment" spellcheck="true">% 先删除上一个 f12 的图像</span>
-        p1 <span class="token operator">=</span> <span class="token function">fplot</span><span class="token punctuation">(</span>f12<span class="token punctuation">,</span> <span class="token punctuation">[</span>f e<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                 <span class="token comment" spellcheck="true">% 绘制新的 f12</span>
-        <span class="token function">axis</span><span class="token punctuation">(</span><span class="token punctuation">[</span>f<span class="token punctuation">,</span> e<span class="token punctuation">,</span> ymin<span class="token punctuation">,</span> ymax<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">set</span><span class="token punctuation">(</span>p1<span class="token punctuation">,</span> <span class="token string">'Color'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        f14 <span class="token operator">=</span> <span class="token function">int</span><span class="token punctuation">(</span>f13<span class="token punctuation">,</span> f<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>                   <span class="token comment" spellcheck="true">% 计算积分值，即为在 t 时刻的 f1*f2 值</span>
-
-        <span class="token comment" spellcheck="true">% 为了使得绘出的图像平滑，将当前的 (t, f14) 添加到数组（向量）中，然后调用 plot 就可以绘出光滑的曲线</span>
-        <span class="token comment" spellcheck="true">% 否则，只调用 plot(t, f14) 只能绘出散点图</span>
-
-        <span class="token comment" spellcheck="true">% 并且，填充曲线下方到 x 轴的区域。根据简单的几何知识，因为间隔 d 足够小，所以只要填充一个梯形即可</span>
-        <span class="token comment" spellcheck="true">% 设当前的 t 值为 v(i)，当前函数值为 f(i)，那么只要填充梯形 (v(i), f(i)), (v(i), 0), (v(i-1), 0), (v(i-1), f(i-1)) 即可</span>
-        p2 <span class="token operator">=</span> <span class="token function">fill</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token function">dt</span><span class="token punctuation">(</span><span class="token function">length</span><span class="token punctuation">(</span>dt<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">dt</span><span class="token punctuation">(</span><span class="token function">length</span><span class="token punctuation">(</span>dt<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">vec</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">vec</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">ft</span><span class="token punctuation">(</span><span class="token function">length</span><span class="token punctuation">(</span>ft<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> f14<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">set</span><span class="token punctuation">(</span>p2<span class="token punctuation">,</span> <span class="token string">'LineStyle'</span><span class="token punctuation">,</span> <span class="token string">'none'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        dt <span class="token operator">=</span> <span class="token punctuation">[</span>dt <span class="token function">vec</span><span class="token punctuation">(</span><span class="token number">i</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        ft <span class="token operator">=</span> <span class="token punctuation">[</span>ft f14<span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-        <span class="token function">plot</span><span class="token punctuation">(</span>dt<span class="token punctuation">,</span> ft<span class="token punctuation">,</span> <span class="token string">'-b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                     <span class="token comment" spellcheck="true">% 最后绘制图形</span>
-        <span class="token function">axis</span><span class="token punctuation">(</span><span class="token punctuation">[</span>f e ymin ymax<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">pause</span><span class="token punctuation">(</span><span class="token number">0.0001</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                          <span class="token comment" spellcheck="true">% 短暂暂停，产生动画</span>
-    <span class="token keyword">end</span>
-<span class="token keyword">end</span></code></pre>
 
             </div>
             <hr/>
@@ -546,6 +621,9 @@ t2 <span class="token operator">=</span> <span class="token operator">-</span><s
     <script src="/libs/share/js/social-share.min.js"></script>
     
 
+    
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid="></script>
+    <div class="addthis_inline_share_toolbox"></div>
     
 
 </div>
@@ -722,46 +800,6 @@ t2 <span class="token operator">=</span> <span class="token operator">-</span><s
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/11/04/2019/2019-nian-zhong-zong-jie/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="回首2019">
-                        
-                        <span class="card-title">回首2019</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            临近着年底，将2019的工作进行总结。
-总的来说，今年还是做了不少工作，年初印尼开了头，在马来西亚也做了不少关于计算机专业必备知识素养的学习。
-工作首先最重要的就是三个月有余的找工作过程。
-我的过程还是挺艰辛的。一开始也走了不少冤枉路。前前
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-04
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Zhang Baihui
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2019/11/04/2019/bo-shi-yuan-jing/">
                     <div class="card-image">
                         
@@ -793,6 +831,44 @@ University of Amsterdam
 3
 104
 Eindhoven University of 
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhang Baihui
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/11/04/2019/shu-mei-pai-shang-shou/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            VNC方式连接树莓派VNC服务器
+123456789sudo apt-get updatesudo apt-get upgradesudo apt-get install tightvncservertightvncserver#开启服务器
                         
                     </div>
                     <div class="publish-info">
@@ -1143,7 +1219,15 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
 
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
     
 
     
@@ -1151,7 +1235,24 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 
 </body>

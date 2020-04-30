@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="使用谷歌API训练自己检测器, 计算机视觉、机器人">
     <meta name="description" content="使用谷歌API训练自己检测器0. 快速开始Setup:
 
@@ -33,11 +33,12 @@ Quick">
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -116,6 +117,69 @@ Quick">
       
       <span>关于我</span>
     </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
     
   </li>
   
@@ -207,6 +271,72 @@ Quick">
 			
 			关于我
 		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/musics " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/movies " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/books " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/galleries " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+               
+            </ul>
           
         </li>
         
@@ -390,7 +520,7 @@ Quick">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    537
+                    535
                 </div>
                 
 
@@ -463,18 +593,16 @@ Quick">
 <p><a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/configuring_jobs.md" target="_blank" rel="noopener">object detection training pipeline</a>. </p>
 </li>
 </ul>
-<pre><code>tf_record_input_reader {
-  input_path: &quot;/usr/home/username/data/train.record&quot;
-}
-label_map_path: &quot;/usr/home/username/data/label_map.pbtxt&quot;</code></pre><ul>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">tf_record_input_reader </span>&#123;</span><br><span class="line"><span class="symbol">  input_path:</span> <span class="string">"/usr/home/username/data/train.record"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="symbol">label_map_path:</span> <span class="string">"/usr/home/username/data/label_map.pbtxt"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
 <li><p>label map</p>
 <p><a href="https://github.com/tensorflow/models/tree/master/research/object_detection/data" target="_blank" rel="noopener">选择相对应label map</a>. 比如，只有一个label时：</p>
 </li>
 </ul>
-<pre><code>item {
-  id: 1
-  name: &#39;person&#39;
-}</code></pre><h2 id="Pre-trained-model-checkpoint"><a href="#Pre-trained-model-checkpoint" class="headerlink" title="Pre-trained model checkpoint"></a>Pre-trained model checkpoint</h2><p>选择已经训练好的模型进行模型迁移，减少计算量。可选择项。 <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md" target="_blank" rel="noopener">several model checkpoint</a> </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">item</span> &#123;</span><br><span class="line">  <span class="attribute">id</span>: <span class="number">1</span></span><br><span class="line">  name: <span class="string">'person'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Pre-trained-model-checkpoint"><a href="#Pre-trained-model-checkpoint" class="headerlink" title="Pre-trained model checkpoint"></a>Pre-trained model checkpoint</h2><p>选择已经训练好的模型进行模型迁移，减少计算量。可选择项。 <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md" target="_blank" rel="noopener">several model checkpoint</a> </p>
 <h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><ul>
 <li>Training can be either done <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_locally.md" target="_blank" rel="noopener">locally</a> or on the <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_on_cloud.md" target="_blank" rel="noopener">cloud</a> (AWS, Google Cloud etc.). If you have GPU (at least more than 2 GB) at home then you can do it locally otherwise I would recommend to go with the cloud. In my case, I went with <a href="http://cloud.google.com/" target="_blank" rel="noopener">Google Cloud</a> this time and essentially followed all the steps described in <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_on_cloud.md" target="_blank" rel="noopener">their documentation</a>.</li>
 <li>For Google Cloud, you need to define a YAML configuration file. A <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/samples/cloud/cloud.yml" target="_blank" rel="noopener">sample file is also provided</a> and I basically just took the default values.</li>
@@ -575,6 +703,9 @@ label_map_path: &quot;/usr/home/username/data/label_map.pbtxt&quot;</code></pre>
     <script src="/libs/share/js/social-share.min.js"></script>
     
 
+    
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid="></script>
+    <div class="addthis_inline_share_toolbox"></div>
     
 
 </div>
@@ -754,8 +885,7 @@ label_map_path: &quot;/usr/home/username/data/label_map.pbtxt&quot;</code></pre>
                 <a href="/2019/10/15/2019/hexo-bo-ke-da-jian/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Hexo博客搭建">
+                        <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2550&amp;q=80" class="responsive-img" alt="Hexo博客搭建">
                         
                         <span class="card-title">Hexo博客搭建</span>
                     </div>
@@ -763,11 +893,7 @@ label_map_path: &quot;/usr/home/username/data/label_map.pbtxt&quot;</code></pre>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本来自己已经有一个jekyll博客了，但是偶然看见这个大佬的笔记wiki，就简直看到了自己想要的。加之其配色代码风格，与自己心目中相符，断然决定另起炉灶，放弃陪伴几个月的博客，就让它消失在岁月尘光中。
-准备工作
-Prepare
-
-下载nvm
+                            博客搭建指南
                         
                     </div>
                     <div class="publish-info">
@@ -785,8 +911,8 @@ Prepare
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/blog/">
+                        <span class="chip bg-color">blog</span>
                     </a>
                     
                 </div>
@@ -800,29 +926,32 @@ Prepare
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/03/2020/mo-ban/">
+                <a href="/2018/09/07/2020/mo-ban/">
                     <div class="card-image">
                         
+                        <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2550&amp;q=80" class="responsive-img" alt="typora-vue-theme Theme introduction">
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="使用谷歌API训练自己检测器">
-                        
-                        <span class="card-title">使用谷歌API训练自己检测器</span>
+                        <span class="card-title">typora-vue-theme Theme introduction</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            This is the content of your custom post summary. If there is a value for this attribute, the post card summary will display the text, otherwise the program will automatically intercept part of the post content as a summary.
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-07-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-07
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            BY Seaside
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -830,12 +959,12 @@ Prepare
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/tool/">
-                        <span class="chip bg-color">tool</span>
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
                     </a>
                     
-                    <a href="/tags/DL/">
-                        <span class="chip bg-color">DL</span>
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
                     </a>
                     
                 </div>
@@ -1175,7 +1304,15 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
 
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
     
 
     
@@ -1183,7 +1320,24 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 
 </body>

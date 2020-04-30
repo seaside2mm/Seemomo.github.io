@@ -3,7 +3,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="计算机视觉、机器人">
     <meta name="description" content="Home | 桃与海">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,11 +26,12 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 <body>
-    <header class="navbar-fixed">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper head-container">
             <div class="brand-logo">
@@ -109,6 +110,69 @@
       
       <span>关于我</span>
     </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
     
   </li>
   
@@ -203,6 +267,72 @@
           
         </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/musics " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/movies " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/books " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/galleries " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
         
     </ul>
 </div>
@@ -270,6 +400,13 @@
 
 <div id="page" class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
     
+    <div id="prev-cover" class="left waves-effect carousel-control">
+        <i class="icon fas fa-angle-left"></i>
+    </div>
+    <div id="next-cover" class="right waves-effect carousel-control">
+        <i class="icon fas fa-angle-right"></i>
+    </div>
+    
 
     <div class="carousel-item red white-text bg-cover about-cover">
         <div class="container" style="right: 0px;left: 0px;">
@@ -311,6 +448,10 @@
 
             <div class="cover-btns">
                 
+                <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light btn" target="_blank">
+                    <i class="fab fa-github-alt"></i>Github
+                </a>
+                
             </div>
             <div class="cover-social-link">
 
@@ -342,6 +483,32 @@
         </div>
     </div>
 
+    
+    
+
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/images/1.jpg');">
+        <div class="container" style="right: 0px;left: 0px;">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">typora-vue-theme Theme introduction</div>
+                    <div class="description center-align">
+                    
+                        This is the content of your custom post summary. If there is a value for this attribute, the post card summary will display the text, otherwise the program will automatically intercept part of the post content as a summary.
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2018/09/07/2020/mo-ban/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon far fa-eye fa-fw"></i>Read more
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     
 </div>
 
@@ -454,6 +621,39 @@ $(function () {
 
 
 
+
+
+<div class="title"><i class="far fa-thumbs-up"></i>&nbsp;&nbsp;Recommended Posts</div>
+
+<div class="row">
+
+    
+    
+    <div class="col s12" >
+        <div class="post-card" style="background-image: url('https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/Markdown/" class="category">Markdown</a>
+                        
+                    
+                </div>
+                <a href="/2018/09/07/2020/mo-ban/">
+                    <h3 class="post-title">typora-vue-theme Theme introduction</h3>
+                </a>
+                <p class="post-description">This is the content of your custom post summary. If there is a value for this attribute, the post card summary will display the text, otherwise the program will automatically intercept part of the post content as a summary.</p>
+                <a href="/2018/09/07/2020/mo-ban/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>Read more
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
                     </div>
                 </div>
             </div>
@@ -469,22 +669,25 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/04/29/2020/python-de-zheng-tai-fen-bu-zai-ren-shi/">
+                    <a href="/2020/04/29/2020/python-de-zhong-xin-ji-xian-ding-li-zai-ren-shi/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【统计】python的正态分布再认识">
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="【统计】python的中心极限定理再认识">
                             
-                            <span class="card-title">【统计】python的正态分布再认识</span>
+                            <span class="card-title">【统计】python的中心极限定理再认识</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                原文来源：https://qiita.com/kenmatsu4/items/74b8a9f696507af410a4
+                                原文来源：https://qiita.com/kenmatsu4/items/351284ef430bcfd2c8ed
 
-在统计学中，正态分布起着非常重要的作用。 表示正态分布（密度函数）的公式为$${\Phi(x) = \frac{1}{
+1.中心極限定理如果你研究统计学，你一定会看到一个比较生硬的名字–中心极限定理。
+根据维基百科的说法。
+
+中心极限定理
                             
                         </div>
                         <div class="publish-info">
@@ -518,25 +721,22 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/04/29/2020/python-de-zhong-xin-ji-xian-ding-li-zai-ren-shi/">
+                    <a href="/2020/04/29/2020/python-de-zheng-tai-fen-bu-zai-ren-shi/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="【统计】python的中心极限定理再认识">
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【统计】python的正态分布再认识">
                             
-                            <span class="card-title">【统计】python的中心极限定理再认识</span>
+                            <span class="card-title">【统计】python的正态分布再认识</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                原文来源：https://qiita.com/kenmatsu4/items/351284ef430bcfd2c8ed
+                                原文来源：https://qiita.com/kenmatsu4/items/74b8a9f696507af410a4
 
-1.中心極限定理如果你研究统计学，你一定会看到一个比较生硬的名字–中心极限定理。
-根据维基百科的说法。
-
-中心极限定理
+在统计学中，正态分布起着非常重要的作用。 表示正态分布（密度函数）的公式为$${\Phi(x) = \frac{1}{
                             
                         </div>
                         <div class="publish-info">
@@ -708,42 +908,6 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/11/04/2019/matlab-shi-xian-juan-ji-cao-zuo/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="MATLAB 实现函数卷积演示动画">
-                            
-                            <span class="card-title">MATLAB 实现函数卷积演示动画</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                前置知识图解法求卷积函数的卷积:$$f_1(t) * f_2(t) = \int _{-\infty}^{\infty} f_1(\tau)f_2(t-\tau) d\tau$$
-使用图解法，将卷积运算中一些抽象的关系形象化。具体有以下几个
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Zhang Baihui
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
                     <a href="/2019/11/04/2019/bo-shi-yuan-jing/">
                         <div class="card-image">
                             
@@ -797,6 +961,42 @@ Eindhoven University of
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2019/11/04/2019/matlab-shi-xian-juan-ji-cao-zuo/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="MATLAB 实现函数卷积演示动画">
+                            
+                            <span class="card-title">MATLAB 实现函数卷积演示动画</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                前置知识图解法求卷积函数的卷积:$$f_1(t) * f_2(t) = \int _{-\infty}^{\infty} f_1(\tau)f_2(t-\tau) d\tau$$
+使用图解法，将卷积运算中一些抽象的关系形象化。具体有以下几个
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-04
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Zhang Baihui
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2019/11/04/2019/shu-mei-pai-shang-shou/">
                         <div class="card-image">
                             
@@ -811,13 +1011,7 @@ Eindhoven University of
                         <div class="summary block-with-text">
                             
                                 VNC方式连接树莓派VNC服务器
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install tightvncserver
-
-tightvncserver
-#开启服务器
-vnc
+123456789sudo apt-get updatesudo apt-get upgradesudo apt-get install tightvncservertightvncserver#开启服务器
                             
                         </div>
                         <div class="publish-info">
@@ -842,8 +1036,7 @@ vnc
                     <a href="/2019/10/15/2019/hexo-bo-ke-da-jian/">
                         <div class="card-image">
                             
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Hexo博客搭建">
+                            <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2550&amp;q=80" class="responsive-img" alt="Hexo博客搭建">
                             
                             <span class="card-title">Hexo博客搭建</span>
                         </div>
@@ -852,11 +1045,7 @@ vnc
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                本来自己已经有一个jekyll博客了，但是偶然看见这个大佬的笔记wiki，就简直看到了自己想要的。加之其配色代码风格，与自己心目中相符，断然决定另起炉灶，放弃陪伴几个月的博客，就让它消失在岁月尘光中。
-准备工作
-Prepare
-
-下载nvm
+                                博客搭建指南
                             
                         </div>
                         <div class="publish-info">
@@ -875,8 +1064,8 @@ Prepare
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/hexo/">
-                            <span class="chip bg-color">hexo</span>
+                        <a href="/tags/blog/">
+                            <span class="chip bg-color">blog</span>
                         </a>
                         
                     </div>
@@ -1138,7 +1327,15 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
 
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
     
 
     
@@ -1146,7 +1343,24 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
     
 
 </body>
