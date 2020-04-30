@@ -520,7 +520,7 @@ Quick">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    535
+                    537
                 </div>
                 
 
@@ -593,16 +593,18 @@ Quick">
 <p><a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/configuring_jobs.md" target="_blank" rel="noopener">object detection training pipeline</a>. </p>
 </li>
 </ul>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">tf_record_input_reader </span>&#123;</span><br><span class="line"><span class="symbol">  input_path:</span> <span class="string">"/usr/home/username/data/train.record"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="symbol">label_map_path:</span> <span class="string">"/usr/home/username/data/label_map.pbtxt"</span></span><br></pre></td></tr></table></figure>
-
-<ul>
+<pre><code>tf_record_input_reader {
+  input_path: &quot;/usr/home/username/data/train.record&quot;
+}
+label_map_path: &quot;/usr/home/username/data/label_map.pbtxt&quot;</code></pre><ul>
 <li><p>label map</p>
 <p><a href="https://github.com/tensorflow/models/tree/master/research/object_detection/data" target="_blank" rel="noopener">选择相对应label map</a>. 比如，只有一个label时：</p>
 </li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">item</span> &#123;</span><br><span class="line">  <span class="attribute">id</span>: <span class="number">1</span></span><br><span class="line">  name: <span class="string">'person'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Pre-trained-model-checkpoint"><a href="#Pre-trained-model-checkpoint" class="headerlink" title="Pre-trained model checkpoint"></a>Pre-trained model checkpoint</h2><p>选择已经训练好的模型进行模型迁移，减少计算量。可选择项。 <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md" target="_blank" rel="noopener">several model checkpoint</a> </p>
+<pre><code>item {
+  id: 1
+  name: &#39;person&#39;
+}</code></pre><h2 id="Pre-trained-model-checkpoint"><a href="#Pre-trained-model-checkpoint" class="headerlink" title="Pre-trained model checkpoint"></a>Pre-trained model checkpoint</h2><p>选择已经训练好的模型进行模型迁移，减少计算量。可选择项。 <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md" target="_blank" rel="noopener">several model checkpoint</a> </p>
 <h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><ul>
 <li>Training can be either done <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_locally.md" target="_blank" rel="noopener">locally</a> or on the <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_on_cloud.md" target="_blank" rel="noopener">cloud</a> (AWS, Google Cloud etc.). If you have GPU (at least more than 2 GB) at home then you can do it locally otherwise I would recommend to go with the cloud. In my case, I went with <a href="http://cloud.google.com/" target="_blank" rel="noopener">Google Cloud</a> this time and essentially followed all the steps described in <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_on_cloud.md" target="_blank" rel="noopener">their documentation</a>.</li>
 <li>For Google Cloud, you need to define a YAML configuration file. A <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/samples/cloud/cloud.yml" target="_blank" rel="noopener">sample file is also provided</a> and I basically just took the default values.</li>

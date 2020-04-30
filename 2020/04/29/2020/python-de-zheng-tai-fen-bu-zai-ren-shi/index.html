@@ -515,7 +515,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    532
+                    534
                 </div>
                 
 
@@ -552,8 +552,23 @@
 <p>它稍微向旁边扩散了一下。</p>
 <p>为了让这个$f(x)$的面积为1(因为它是一个概率，所以所有可能发生的事件加起来都是100%)，我们需要把积分成1。</p>
 <p>由<a href="[https://zh.wikipedia.org/wiki/%E9%AB%98%E6%96%AF%E7%A7%AF%E5%88%86](https://zh.wikipedia.org/wiki/高斯积分)">高斯积分（见维基百科）</a>可知，$x$的整个范围内的积分值为<br>$$<br>{\int_{-\infty}^{\infty} e^{-x^2}dx = \sqrt{\pi}<br>}<br>$$<br>所以，带入上面转换变量，<br>$$<br>{\int_{-\infty}^{\infty} \exp \left( {-\frac{y^2}{2}}\right)dy = \sqrt{2\pi}<br>}<br>$$<br>两边除以$2π$,<br>$$<br>{\int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \exp \left( {-\frac{y^2}{2}}\right)dy = １<br>}<br>$$<br>我们得到了标准正态分布的公式:blush:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.linspace(<span class="number">-3</span>,<span class="number">3</span>, <span class="number">500</span>)</span><br><span class="line"></span><br><span class="line">y1 = np.exp(-(x**<span class="number">2</span>))</span><br><span class="line">y2 = np.exp(-(x**<span class="number">2</span>)/<span class="number">2</span>)</span><br><span class="line">y3 = (<span class="number">1</span>/np.sqrt(<span class="number">2</span>*np.pi))*np.exp(-(x**<span class="number">2</span>)/<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(<span class="number">-3</span>,<span class="number">3</span>)</span><br><span class="line">plt.ylim(<span class="number">0</span>,<span class="number">1.1</span>)</span><br><span class="line">         </span><br><span class="line">plt.plot(x,y1,<span class="string">"b"</span>, label=<span class="string">"exp(-x^2)"</span>)</span><br><span class="line">plt.plot(x,y2,<span class="string">"g"</span>, label=<span class="string">"exp(-(x^2)/2"</span>)</span><br><span class="line">plt.plot(x,y3,<span class="string">"r"</span>, label=<span class="string">"normal"</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span>
+
+y1 <span class="token operator">=</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+y2 <span class="token operator">=</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span>
+y3 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">/</span>np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>np<span class="token punctuation">.</span>pi<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">*</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span><span class="token operator">-</span><span class="token punctuation">(</span>x<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>xlim<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylim<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1.1</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y1<span class="token punctuation">,</span><span class="token string">"b"</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"exp(-x^2)"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y2<span class="token punctuation">,</span><span class="token string">"g"</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"exp(-(x^2)/2"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y3<span class="token punctuation">,</span><span class="token string">"r"</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"normal"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geaih8vzbhj30gh0a3mxl.jpg" alt=""></p>
 <p>这个公式是在$e^{-x^2}$的基础上，经过调整，如果把它积分面积就会是1。</p>
 
@@ -815,34 +830,32 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/04/29/2020/python-de-zhong-xin-ji-xian-ding-li-zai-ren-shi/">
+                <a href="/2020/04/29/2020/python-de-zheng-tai-fen-bu-zai-ren-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="【统计】python的中心极限定理再认识">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【统计】python的正态分布再认识">
                         
-                        <span class="card-title">【统计】python的中心极限定理再认识</span>
+                        <span class="card-title">【统计】python的正态分布再认识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            原文来源：https://qiita.com/kenmatsu4/items/351284ef430bcfd2c8ed
+                            原文来源：https://qiita.com/kenmatsu4/items/74b8a9f696507af410a4
 
-1.中心極限定理如果你研究统计学，你一定会看到一个比较生硬的名字–中心极限定理。
-根据维基百科的说法。
-
-中心极限定理
+在统计学中，正态分布起着非常重要的作用。 表示正态分布（密度函数）的公式为$${\Phi(x) = \frac{1}{
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -851,6 +864,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
