@@ -5,14 +5,16 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="使用谷歌API训练自己检测器, 计算机视觉、机器人">
-    <meta name="description" content="使用谷歌API训练自己检测器0. 快速开始Setup:
+    <meta name="description" content="使用谷歌API训练自己检测器
+0. 快速开始
+Setup:
 
 Installation
 
 Quick Start:
 
 Quick Start: Jupyter notebook for off-the-shelf inference
-Quick">
+Qui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -520,7 +522,7 @@ Quick">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    537
+                    536
                 </div>
                 
 
@@ -543,7 +545,9 @@ Quick">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="使用谷歌API训练自己检测器"><a href="#使用谷歌API训练自己检测器" class="headerlink" title="使用谷歌API训练自己检测器"></a>使用谷歌API训练自己检测器</h1><h1 id="0-快速开始"><a href="#0-快速开始" class="headerlink" title="0. 快速开始"></a>0. 快速开始</h1><p>Setup:</p>
+                <h1>使用谷歌API训练自己检测器</h1>
+<h1>0. 快速开始</h1>
+<p>Setup:</p>
 <ul>
 <li><a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md" target="_blank" rel="noopener">Installation</a></li>
 </ul>
@@ -557,23 +561,30 @@ Quick">
 <p>data — 转化后tf record文件</p>
 <p>images — 原数据集</p>
 <p>training  — 训练模型以及配置文件</p>
-<h1 id="1-制作图像数据集"><a href="#1-制作图像数据集" class="headerlink" title="1. 制作图像数据集"></a>1. 制作图像数据集</h1><h2 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h2><p> <a href="https://images.google.com/" target="_blank" rel="noopener">Google Images</a> and <a href="https://pixabay.com/" target="_blank" rel="noopener">Pixabay</a> </p>
+<h1>1. 制作图像数据集</h1>
+<h2 id="数据来源">数据来源</h2>
+<p><a href="https://images.google.com/" target="_blank" rel="noopener">Google Images</a> and <a href="https://pixabay.com/" target="_blank" rel="noopener">Pixabay</a></p>
 <ul>
-<li><p>jpeg or png</p>
+<li>
+<p>jpeg or png</p>
 </li>
-<li><p>bounding boxes (<code>xmin, ymin, xmax, ymax</code>) </p>
+<li>
+<p>bounding boxes (<code>xmin, ymin, xmax, ymax</code>)</p>
 </li>
 </ul>
-<h2 id="数据标注工具"><a href="#数据标注工具" class="headerlink" title="数据标注工具"></a>数据标注工具</h2><p>几种格式：PASCAL VOC format， COCO</p>
+<h2 id="数据标注工具">数据标注工具</h2>
+<p>几种格式：PASCAL VOC format， COCO</p>
 <ul>
-<li><p><a href="http://www.robots.ox.ac.uk/~vgg/software/via/" target="_blank" rel="noopener">VIA (VGG Image Annotator)</a></p>
+<li>
+<p><a href="http://www.robots.ox.ac.uk/~vgg/software/via/" target="_blank" rel="noopener">VIA (VGG Image Annotator)</a></p>
 <blockquote>
-<p>because of its simplicity. It’s a single HTML file that you download and open in a browser. </p>
+<p>because of its simplicity. It’s a single HTML file that you download and open in a browser.</p>
 </blockquote>
 </li>
-<li><p><a href="https://github.com/tzutalin/labelImg" target="_blank" rel="noopener">LabelImg</a></p>
+<li>
+<p><a href="https://github.com/tzutalin/labelImg" target="_blank" rel="noopener">LabelImg</a></p>
 <blockquote>
-<p>saved as XML files in the PASCAL VOC format </p>
+<p>saved as XML files in the PASCAL VOC format</p>
 </blockquote>
 </li>
 </ul>
@@ -581,36 +592,45 @@ Quick">
 <ul>
 <li><a href="https://github.com/christopher5106/FastAnnotationTool" target="_blank" rel="noopener">FIAT (Fast Image Data Annotation Tool)</a></li>
 </ul>
-<h2 id="csv数据集划分"><a href="#csv数据集划分" class="headerlink" title="csv数据集划分"></a>csv数据集划分</h2><p><a href="https://gist.github.com/seaside2mm/8cd6c846936a441489bc310d69b1d42a" target="_blank" rel="noopener">划分训练和测试</a></p>
-<h2 id="TFRecord数据格式"><a href="#TFRecord数据格式" class="headerlink" title="TFRecord数据格式"></a>TFRecord数据格式</h2><p>生成方法：</p>
-<p> <a href="http://host.robots.ox.ac.uk/pascal/VOC/" target="_blank" rel="noopener">PASCAL VOC dataset</a> </p>
+<h2 id="csv数据集划分">csv数据集划分</h2>
+<p><a href="https://gist.github.com/seaside2mm/8cd6c846936a441489bc310d69b1d42a" target="_blank" rel="noopener">划分训练和测试</a></p>
+<h2 id="TFRecord数据格式">TFRecord数据格式</h2>
+<p>生成方法：</p>
+<p><a href="http://host.robots.ox.ac.uk/pascal/VOC/" target="_blank" rel="noopener">PASCAL VOC dataset</a></p>
 <p><a href="https://github.com/tensorflow/models/blob/master/research/object_detection/dataset_tools/create_pascal_tf_record.py" target="_blank" rel="noopener">create_pascal_tf_record.py</a></p>
 <p>图像格式转换</p>
-<p> <a href="http://imagemagick.org/#" target="_blank" rel="noopener">ImageMagick</a></p>
-<h1 id="2-训练模型"><a href="#2-训练模型" class="headerlink" title="2. 训练模型"></a>2. 训练模型</h1><p>利用 <a href="https://research.googleblog.com/2017/06/supercharge-your-computer-vision-models.html" target="_blank" rel="noopener">TensorFlow’s new Object Detector API</a>进行模型训练。</p>
-<h2 id="更改配置文件"><a href="#更改配置文件" class="headerlink" title="更改配置文件"></a>更改配置文件</h2><ul>
-<li><p>选择具体NN模型更改 <a href="https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs" target="_blank" rel="noopener">config files</a></p>
-<p><a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/configuring_jobs.md" target="_blank" rel="noopener">object detection training pipeline</a>. </p>
-</li>
+<p><a href="http://imagemagick.org/#" target="_blank" rel="noopener">ImageMagick</a></p>
+<h1>2. 训练模型</h1>
+<p>利用 <a href="https://research.googleblog.com/2017/06/supercharge-your-computer-vision-models.html" target="_blank" rel="noopener">TensorFlow’s new Object Detector API</a>进行模型训练。</p>
+<h2 id="更改配置文件">更改配置文件</h2>
+<ul>
+<li>选择具体NN模型更改 <a href="https://github.com/tensorflow/models/tree/master/research/object_detection/samples/configs" target="_blank" rel="noopener">config files</a></li>
 </ul>
+<p><a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/configuring_jobs.md" target="_blank" rel="noopener">object detection training pipeline</a>.</p>
 <pre><code>tf_record_input_reader {
   input_path: &quot;/usr/home/username/data/train.record&quot;
 }
-label_map_path: &quot;/usr/home/username/data/label_map.pbtxt&quot;</code></pre><ul>
-<li><p>label map</p>
-<p><a href="https://github.com/tensorflow/models/tree/master/research/object_detection/data" target="_blank" rel="noopener">选择相对应label map</a>. 比如，只有一个label时：</p>
-</li>
+label_map_path: &quot;/usr/home/username/data/label_map.pbtxt&quot;
+</code></pre>
+<ul>
+<li>label map</li>
 </ul>
+<p><a href="https://github.com/tensorflow/models/tree/master/research/object_detection/data" target="_blank" rel="noopener">选择相对应label map</a>. 比如，只有一个label时：</p>
 <pre><code>item {
   id: 1
-  name: &#39;person&#39;
-}</code></pre><h2 id="Pre-trained-model-checkpoint"><a href="#Pre-trained-model-checkpoint" class="headerlink" title="Pre-trained model checkpoint"></a>Pre-trained model checkpoint</h2><p>选择已经训练好的模型进行模型迁移，减少计算量。可选择项。 <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md" target="_blank" rel="noopener">several model checkpoint</a> </p>
-<h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><ul>
+  name: 'person'
+}
+</code></pre>
+<h2 id="Pre-trained-model-checkpoint">Pre-trained model checkpoint</h2>
+<p>选择已经训练好的模型进行模型迁移，减少计算量。可选择项。 <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md" target="_blank" rel="noopener">several model checkpoint</a></p>
+<h2 id="训练">训练</h2>
+<ul>
 <li>Training can be either done <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_locally.md" target="_blank" rel="noopener">locally</a> or on the <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_on_cloud.md" target="_blank" rel="noopener">cloud</a> (AWS, Google Cloud etc.). If you have GPU (at least more than 2 GB) at home then you can do it locally otherwise I would recommend to go with the cloud. In my case, I went with <a href="http://cloud.google.com/" target="_blank" rel="noopener">Google Cloud</a> this time and essentially followed all the steps described in <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/running_on_cloud.md" target="_blank" rel="noopener">their documentation</a>.</li>
 <li>For Google Cloud, you need to define a YAML configuration file. A <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/samples/cloud/cloud.yml" target="_blank" rel="noopener">sample file is also provided</a> and I basically just took the default values.</li>
 <li>It is also recommended during the training to start the evaluation job. You can then monitor the process of the training and evaluation jobs by running <a href="https://www.tensorflow.org/get_started/summaries_and_tensorboard" target="_blank" rel="noopener">Tensorboard</a> on your local machine.</li>
 </ul>
-<h1 id="3-导出模型"><a href="#3-导出模型" class="headerlink" title="3. 导出模型"></a>3. 导出模型</h1><p>copy the model checkpoints from the Google Cloud bucket to my local machine and then used the <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md" target="_blank" rel="noopener">provided script</a> to export the model.</p>
+<h1>3. 导出模型</h1>
+<p>copy the model checkpoints from the Google Cloud bucket to my local machine and then used the <a href="https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md" target="_blank" rel="noopener">provided script</a> to export the model.</p>
 <p>After export, you should see the directory ${EXPORT_DIR} containing the following:</p>
 <ul>
 <li>saved_model/, a directory containing the saved model format of the exported model</li>
@@ -619,7 +639,8 @@ label_map_path: &quot;/usr/home/username/data/label_map.pbtxt&quot;</code></pre>
 <li>checkpoint, a file specifying to restore included checkpoint files</li>
 <li>pipeline.config, pipeline config file for the exported model</li>
 </ul>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/tensorflow/models/tree/master/research/object_detection" target="_blank" rel="noopener">https://github.com/tensorflow/models/tree/master/research/object_detection</a></p>
+<h1>参考</h1>
+<p><a href="https://github.com/tensorflow/models/tree/master/research/object_detection" target="_blank" rel="noopener">https://github.com/tensorflow/models/tree/master/research/object_detection</a></p>
 <p><a href="https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9" target="_blank" rel="noopener">https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9</a></p>
 
             </div>
@@ -928,32 +949,38 @@ label_map_path: &quot;/usr/home/username/data/label_map.pbtxt&quot;</code></pre>
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/07/2020/mo-ban/">
+                <a href="/2019/04/29/2019/threading/">
                     <div class="card-image">
                         
-                        <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2550&amp;q=80" class="responsive-img" alt="typora-vue-theme Theme introduction">
                         
-                        <span class="card-title">typora-vue-theme Theme introduction</span>
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="python多线程">
+                        
+                        <span class="card-title">python多线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            This is the content of your custom post summary. If there is a value for this attribute, the post card summary will display the text, otherwise the program will automatically intercept part of the post content as a summary.
+                            多线程
+import threading
+
+#获取已激活的线程数
+threading.active_count()
+
+#查看所有线程信息
+threading.enumerate()
+
+[&lt;_MainThread(MainThread,
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-04-29
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            seaside
                             
                         </span>
                     </div>
@@ -961,12 +988,8 @@ label_map_path: &quot;/usr/home/username/data/label_map.pbtxt&quot;</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
-                    </a>
-                    
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>

@@ -7,10 +7,11 @@
     <meta name="keywords" content="【统计】python的中心极限定理再认识, 计算机视觉、机器人">
     <meta name="description" content="原文来源：https://qiita.com/kenmatsu4/items/351284ef430bcfd2c8ed
 
-1.中心極限定理如果你研究统计学，你一定会看到一个比较生硬的名字–中心极限定理。
+1.中心極限定理
+如果你研究统计学，你一定会看到一个比较生硬的名字–中心极限定理。
 根据维基百科的说法。
 
-中心极限定理">
+中心极限定">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -484,12 +485,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BB%9F%E8%AE%A1/">
-                                <span class="chip bg-color">统计</span>
-                            </a>
-                        
                             <a href="/tags/python/">
                                 <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BB%9F%E8%AE%A1/">
+                                <span class="chip bg-color">统计</span>
                             </a>
                         
                     </div>
@@ -543,94 +544,110 @@
             <div id="articleContent">
                 <p>原文来源：<a href="https://qiita.com/kenmatsu4/items/351284ef430bcfd2c8ed" target="_blank" rel="noopener">https://qiita.com/kenmatsu4/items/351284ef430bcfd2c8ed</a></p>
 <hr>
-<h1 id="1-中心極限定理"><a href="#1-中心極限定理" class="headerlink" title="1.中心極限定理"></a>1.中心極限定理</h1><p>如果你研究统计学，你一定会看到一个比较生硬的名字–中心极限定理。</p>
+<h1>1.中心極限定理</h1>
+<p>如果你研究统计学，你一定会看到一个比较生硬的名字–中心极限定理。</p>
 <p>根据维基百科的说法。</p>
 <blockquote>
-<p><strong>中心极限定理</strong>是<a href="https://zh.m.wikipedia.org/wiki/概率论" target="_blank" rel="noopener">概率论</a>中的一组定理。中心极限定理说明，在适当的条件下，大量相互独立<a href="https://zh.m.wikipedia.org/wiki/随机变量" target="_blank" rel="noopener">随机变量</a>的均值经适当标准化后<a href="https://zh.m.wikipedia.org/wiki/依分布收敛" target="_blank" rel="noopener">依分布收敛</a>于<a href="https://zh.m.wikipedia.org/wiki/正态分布" target="_blank" rel="noopener">正态分布</a>。这组定理是<a href="https://zh.m.wikipedia.org/wiki/数理统计学" target="_blank" rel="noopener">数理统计学</a>和误差分析的理论基础，指出了大量随机变量之和近似服从正态分布的条件。</p>
+<p><strong>中心极限定理</strong>是<a href="https://zh.m.wikipedia.org/wiki/%E6%A6%82%E7%8E%87%E8%AE%BA" target="_blank" rel="noopener">概率论</a>中的一组定理。中心极限定理说明，在适当的条件下，大量相互独立<a href="https://zh.m.wikipedia.org/wiki/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F" target="_blank" rel="noopener">随机变量</a>的均值经适当标准化后<a href="https://zh.m.wikipedia.org/wiki/%E4%BE%9D%E5%88%86%E5%B8%83%E6%94%B6%E6%95%9B" target="_blank" rel="noopener">依分布收敛</a>于<a href="https://zh.m.wikipedia.org/wiki/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83" target="_blank" rel="noopener">正态分布</a>。这组定理是<a href="https://zh.m.wikipedia.org/wiki/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E5%AD%A6" target="_blank" rel="noopener">数理统计学</a>和误差分析的理论基础，指出了大量随机变量之和近似服从正态分布的条件。</p>
 </blockquote>
-<p>但我不太明白……<br>无论原始分布是什么，从它中抽取的样本均值都会接近正态分布。 样本方差也将接近于正态分布。 (准确地说，如果根据卡方分布，如果N大，可以用正态分布来近似)。</p>
+<p>但我不太明白…<br>
+无论原始分布是什么，从它中抽取的样本均值都会接近正态分布。 样本方差也将接近于正态分布。 (准确地说，如果根据卡方分布，如果N大，可以用正态分布来近似)。</p>
 <p>我想即使我们用语言解释，或者用公式证明（乘积率参数函数匹配之类的东西），也无法直观的理解它，所以本文的目的是想通过作图来尝试理解它。</p>
-<p>更多理论内容，<a href="[https://zh.m.wikipedia.org/zh-hans/%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86](https://zh.m.wikipedia.org/zh-hans/中心极限定理)">参考wiki</a></p>
-<h1 id="2-准备作图"><a href="#2-准备作图" class="headerlink" title="2. 准备作图"></a>2. 准备作图</h1><p>我们将用Python编写一个图形，准备过程如下。<br>本节提供了导入各种库和绘制图形的功能。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">%</span>matplotlib inline
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-<span class="token keyword">import</span> numpy<span class="token punctuation">.</span>random <span class="token keyword">as</span> rd
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>mlab <span class="token keyword">as</span> mlab
-<span class="token keyword">import</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword">as</span> st
+<p>更多理论内容，<a href="%5Bhttps://zh.m.wikipedia.org/zh-hans/%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86%5D(https://zh.m.wikipedia.org/zh-hans/%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86)">参考wiki</a></p>
+<h1>2. 准备作图</h1>
+<p>我们将用Python编写一个图形，准备过程如下。<br>
+本节提供了导入各种库和绘制图形的功能。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">%matplotlib inline
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.random as rd
+import matplotlib.mlab as mlab
+import scipy.stats as st
 
-<span class="token comment" spellcheck="true"># 参数</span>
-n <span class="token operator">=</span> <span class="token number">10000</span>
-sample_size <span class="token operator">=</span> <span class="token number">10000</span>
+# 参数
+n = 10000
+sample_size = 10000
 
-<span class="token comment" spellcheck="true"># 计算样本均值方差的函数</span>
-<span class="token keyword">def</span> <span class="token function">sample_to_mean_var</span><span class="token punctuation">(</span>sample<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    mean <span class="token operator">=</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>sample<span class="token punctuation">)</span>
-    var  <span class="token operator">=</span> np<span class="token punctuation">.</span>var<span class="token punctuation">(</span>sample<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> <span class="token punctuation">[</span>mean<span class="token punctuation">,</span> var<span class="token punctuation">]</span>
+# 计算样本均值方差的函数
+def sample_to_mean_var(sample):
+    mean = np.mean(sample)
+    var  = np.var(sample)
+    return [mean, var]
 
-<span class="token comment" spellcheck="true"># 画图</span>
-<span class="token keyword">def</span> <span class="token function">plot_mean_var</span><span class="token punctuation">(</span>stats<span class="token punctuation">,</span> dist_name<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    mu <span class="token operator">=</span> stats<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>
-    var <span class="token operator">=</span> stats<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
-    bins <span class="token operator">=</span> <span class="token number">40</span>
+# 画图
+def plot_mean_var(stats, dist_name=""):
+    mu = stats[:,0]
+    var = stats[:,1]
+    bins = 40
 
-    <span class="token comment" spellcheck="true"># 均值图</span>
-    plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>mu<span class="token punctuation">,</span> bins<span class="token operator">=</span>bins<span class="token punctuation">,</span> density<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"plum"</span><span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"mu from %s distribution"</span><span class="token operator">%</span><span class="token punctuation">(</span>dist_name<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    # 均值图
+    plt.figure(figsize=(7,5))
+    plt.hist(mu, bins=bins, density=True, color="plum")
+    plt.title("mu from %s distribution"%(dist_name))
+    plt.show()
 
-    <span class="token comment" spellcheck="true"># 方差图</span>
-    plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>var<span class="token punctuation">,</span> bins<span class="token operator">=</span>bins<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"lightblue"</span><span class="token punctuation">,</span> density<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"var from %s distribution"</span><span class="token operator">%</span><span class="token punctuation">(</span>dist_name<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    # 方差图
+    plt.figure(figsize=(7,5))
+    plt.hist(var, bins=bins, color="lightblue", density=True)
+    plt.title("var from %s distribution"%(dist_name))
+    plt.show()
 
-<span class="token keyword">def</span> <span class="token function">plot_dist</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> bins<span class="token punctuation">,</span> title <span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span>title<span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>data<span class="token punctuation">,</span> bins<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"lightgreen"</span><span class="token punctuation">,</span> density<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="3-绘图"><a href="#3-绘图" class="headerlink" title="3. 绘图"></a>3. 绘图</h1><h2 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h2><p>首先，让我们尝试一下指数分布。 下图是参数λ为0.1、10000个样本的指数分布图。 它是一个完全不对称的分布，右边是长长的下摆。</p>
-<pre class="line-numbers language-python"><code class="language-python">lam <span class="token operator">=</span> <span class="token number">0.1</span>  
-x <span class="token operator">=</span> rd<span class="token punctuation">.</span>exponential<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token operator">/</span>lam<span class="token punctuation">,</span> size<span class="token operator">=</span>sample_size<span class="token punctuation">)</span>
-plot_dist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token string">"exponential dist"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+def plot_dist(data, bins, title =""):
+    plt.figure(figsize=(7,5))
+    plt.title(title)
+    plt.hist(data, bins, color="lightgreen", density=True)
+    plt.show()
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1>3. 绘图</h1>
+<h2 id="指数分布">指数分布</h2>
+<p>首先，让我们尝试一下指数分布。 下图是参数λ为0.1、10000个样本的指数分布图。 它是一个完全不对称的分布，右边是长长的下摆。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">lam = 0.1  
+x = rd.exponential(1./lam, size=sample_size)
+plot_dist(x, 100, "exponential dist")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geajan90yej30c208vq2t.jpg" alt="下载"></p>
 <p>以这组10000个样本为一组，由这里计算出样本均值和样本方差。 在重复10,000次后，写出样本平均数和样本方差的直方图，我们得到如下结果.</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 由指数分布生成的样本</span>
-lam <span class="token operator">=</span> <span class="token number">0.1</span>
-stats <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span>sample_to_mean_var<span class="token punctuation">(</span>rd<span class="token punctuation">.</span>exponential<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token operator">/</span>lam<span class="token punctuation">,</span> size<span class="token operator">=</span>sample_size<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-plot_mean_var<span class="token punctuation">(</span>stats<span class="token punctuation">,</span> dist_name<span class="token operator">=</span><span class="token string">"exponential"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python"># 由指数分布生成的样本
+lam = 0.1
+stats = np.array([sample_to_mean_var(rd.exponential(1./lam, size=sample_size)) for i in range(n)])
+plot_mean_var(stats, dist_name="exponential")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geaj6caq75j30c208ydfo.jpg" alt=""></p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geajemi01mj30c608yq2u.jpg" alt=""></p>
 <p>我不知道，原来的分布相当偏斜，但样本均值和样本方差似乎是一个美丽的对称钟形。 中心极限定理是，样本均值和方差遵循正态分布。</p>
 <p>下面，我也用其他的分布图来试试。</p>
-<h2 id="卡方分布"><a href="#卡方分布" class="headerlink" title="卡方分布"></a>卡方分布</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 自由度5</span>
-df <span class="token operator">=</span> <span class="token number">5</span>
-x <span class="token operator">=</span> rd<span class="token punctuation">.</span>chisquare<span class="token punctuation">(</span>df<span class="token punctuation">,</span> sample_size<span class="token punctuation">)</span>
-plot_dist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token string">"chi square dist"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F50670%2F50d746b4-8b89-b199-9047-70910576c877.png?ixlib=rb-1.2.2&auto=format&gif-q=60&q=75&w=1400&fit=max&s=db9f98cc504dedb6c8c638fef702d8a9" alt=""></p>
-<pre class="line-numbers language-python"><code class="language-python">df <span class="token operator">=</span> <span class="token number">5</span>   <span class="token comment" spellcheck="true"># 自由度</span>
+<h2 id="卡方分布">卡方分布</h2>
+<pre class="line-numbers language-language-python"><code class="language-language-python"># 自由度5
+df = 5
+x = rd.chisquare(df, sample_size)
+plot_dist(x, 50, "chi square dist")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F50670%2F50d746b4-8b89-b199-9047-70910576c877.png?ixlib=rb-1.2.2&amp;auto=format&amp;gif-q=60&amp;q=75&amp;w=1400&amp;fit=max&amp;s=db9f98cc504dedb6c8c638fef702d8a9" alt=""></p>
+<pre class="line-numbers language-language-python"><code class="language-language-python">df = 5   # 自由度
 
-chi_stats <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span>sample_to_mean_var<span class="token punctuation">(</span>rd<span class="token punctuation">.</span>chisquare<span class="token punctuation">(</span>df<span class="token punctuation">,</span> sample_size<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-plot_mean_var<span class="token punctuation">(</span>chi_stats<span class="token punctuation">,</span> dist_name<span class="token operator">=</span><span class="token string">"chi square"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+chi_stats = np.array([sample_to_mean_var(rd.chisquare(df, sample_size)) for i in range(n)])
+plot_mean_var(chi_stats, dist_name="chi square")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geajic7kz8j30by08y0sk.jpg" alt=""></p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geajid5tu4j30c108yt8j.jpg" alt=""></p>
-<h2 id="双峰正态分布"><a href="#双峰正态分布" class="headerlink" title="双峰正态分布"></a>双峰正态分布</h2><p>我也会尝试一下奇形怪状的分布，比如两座山。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 双峰正規分布</span>
-<span class="token keyword">def</span> <span class="token function">generate_bimodal_norm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    x <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> sample_size<span class="token punctuation">)</span>
-    y <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> sample_size<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> np<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>
+<h2 id="双峰正态分布">双峰正态分布</h2>
+<p>我也会尝试一下奇形怪状的分布，比如两座山。</p>
+<pre class="line-numbers language-language-python"><code class="language-language-python"># 双峰正規分布
+def generate_bimodal_norm():
+    x = np.random.normal(0, 4, sample_size)
+    y = np.random.normal(25, 8, sample_size)
+    return np.append(x,y)
 
-z <span class="token operator">=</span> generate_bimodal_norm<span class="token punctuation">(</span><span class="token punctuation">)</span>
-plot_dist<span class="token punctuation">(</span>z<span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">,</span> <span class="token string">"bi-modal normal dist"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+z = generate_bimodal_norm()
+plot_dist(z, 70, "bi-modal normal dist")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geajk2bpkrj30c308y0sk.jpg" alt=""></p>
-<pre class="line-numbers language-python"><code class="language-python">binorm_stats <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span>sample_to_mean_var<span class="token punctuation">(</span>generate_bimodal_norm<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-plot_mean_var<span class="token punctuation">(</span>binorm_stats<span class="token punctuation">,</span> dist_name<span class="token operator">=</span><span class="token string">"bi-modal normal"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-language-python"><code class="language-language-python">binorm_stats = np.array([sample_to_mean_var(generate_bimodal_norm()) for i in range(n)])
+plot_mean_var(binorm_stats, dist_name="bi-modal normal")
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>即使是这样的分布，样本均值或样本方差也是正态分布。 すごい，中心极限定理。</p>
-<p>＃4.结论<br>于是，我试着通过看图来直观地理解中心极限定理，虽然看公式和证明，似乎很难。 这也是正态分布在统计学中如此重要的原因:smile:</p>
+<p>＃4.结论<br>
+于是，我试着通过看图来直观地理解中心极限定理，虽然看公式和证明，似乎很难。 这也是正态分布在统计学中如此重要的原因:smile:</p>
 
             </div>
             <hr/>
@@ -694,12 +711,12 @@ plot_mean_var<span class="token punctuation">(</span>binorm_stats<span class="to
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BB%9F%E8%AE%A1/">
-                                    <span class="chip bg-color">统计</span>
-                                </a>
-                            
                                 <a href="/tags/python/">
                                     <span class="chip bg-color">python</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BB%9F%E8%AE%A1/">
+                                    <span class="chip bg-color">统计</span>
                                 </a>
                             
                         </div>
@@ -894,27 +911,24 @@ plot_mean_var<span class="token punctuation">(</span>binorm_stats<span class="to
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/04/29/2020/python-zhi-guan-hua-zheng-tai-fen-bu-yu-qia-fang-fen-bu-de-guan-xi/">
+                <a href="/2020/05/01/2020/san-wei-shi-jue-xue-xi-lu-xian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="【统计】python直观化正态分布与卡方分布的关系">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="3D视觉学习路线">
                         
-                        <span class="card-title">【统计】python直观化正态分布与卡方分布的关系</span>
+                        <span class="card-title">3D视觉学习路线</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            原文来源：https://qiita.com/kenmatsu4/items/b6318d66fcfe78b84d83
-
-这是统计学可视化系列的第三弹。
-卡方分布嘛回事在AB检验中经常使用的是卡方分布（chi-square distribu
+                            一些课程推荐...
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-01
                         </span>
                         <span class="publish-author">
                             
@@ -927,12 +941,8 @@ plot_mean_var<span class="token punctuation">(</span>binorm_stats<span class="to
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BB%9F%E8%AE%A1/">
-                        <span class="chip bg-color">统计</span>
-                    </a>
-                    
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/CV/">
+                        <span class="chip bg-color">CV</span>
                     </a>
                     
                 </div>
@@ -946,36 +956,33 @@ plot_mean_var<span class="token punctuation">(</span>binorm_stats<span class="to
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/05/2019/du-shu-qing-dan/">
+                <a href="/2020/04/29/2020/python-de-zheng-tai-fen-bu-zai-ren-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="读书清单">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="【统计】python的正态分布再认识">
                         
-                        <span class="card-title">读书清单</span>
+                        <span class="card-title">【统计】python的正态分布再认识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            书籍推荐Android创新实验室(AI+移动互联) 整理制作
+                            原文来源：https://qiita.com/kenmatsu4/items/74b8a9f696507af410a4
 
-声明：所有pdf资源均来自网络，不保证内容与书名匹配，请在阅读之前注意辨识。强烈建议阅读纸质版书籍。
-本项目仅供学习交流使用，如有侵权，烦请告知以便删除。
-
-
-数学(进阶)
-《
+在统计学中，正态分布起着非常重要的作用。 表示正态分布（密度函数）的公式为
+$$
+{\Phi(x) = \frac{1
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            BY Seaside
+                            译者
                             
                         </span>
                     </div>
@@ -983,8 +990,12 @@ plot_mean_var<span class="token punctuation">(</span>binorm_stats<span class="to
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/book/">
-                        <span class="chip bg-color">book</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BB%9F%E8%AE%A1/">
+                        <span class="chip bg-color">统计</span>
                     </a>
                     
                 </div>

@@ -7,9 +7,10 @@
     <meta name="keywords" content="Hexo博客搭建, 计算机视觉、机器人">
     <meta name="description" content="本来自己已经有一个jekyll博客了，但是偶然看见这个大佬的笔记wiki，就简直看到了自己想要的。加之其配色代码风格，与自己心目中相符，断然决定另起炉灶，放弃陪伴几个月的博客，就让它消失在岁月尘光中。
 准备工作
+
 Prepare
 
-下载nvm">
+下载nv">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -537,32 +538,36 @@ Prepare
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>本来自己已经有一个jekyll博客了，但是偶然看见<a href="https://www.hahack.com/" target="_blank" rel="noopener">这个大佬</a>的笔记wiki，就简直看到了自己想要的。加之其配色代码风格，与自己心目中相符，断然决定另起炉灶，放弃陪伴几个月的博客，就让它消失在岁月尘光中。</p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<h1>准备工作</h1>
+<ul>
 <li>Prepare</li>
 </ul>
 <p>下载nvm，node。注意环境变量。</p>
 <ul>
 <li>Hexo</li>
 </ul>
-<p>安装Hexo，见<a href="https://hexo.io/docs/index.html" target="_blank" rel="noopener">官网</a>. </p>
+<p>安装Hexo，见<a href="https://hexo.io/docs/index.html" target="_blank" rel="noopener">官网</a>.</p>
 <blockquote>
 <p>⚠️这个问题</p>
 <p>Mac / Linux</p>
 <p>If you encounter <code>EACCES</code> permission error when trying to install Hexo, please follow <a href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally" target="_blank" rel="noopener">the workaround</a> provided by npmjs; overriding with root/sudo is highly discouraged.</p>
 </blockquote>
 <p>一些github和hexo初始化<a href="https://www.jianshu.com/p/cb0750324e26" target="_blank" rel="noopener">操作</a>。</p>
-<pre class="line-numbers language-shell"><code class="language-shell">hexo init
+<pre class="line-numbers language-language-shell"><code class="language-language-shell">hexo init
 hexo install 
 hexo g 
 hexo s
-hexo d #部署到github<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><h2 id="wixo主题"><a href="#wixo主题" class="headerlink" title="wixo主题"></a>wixo主题</h2><p>为了增加wiki的layout，着实花了一番功夫。</p>
+hexo d #部署到github
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1>主题</h1>
+<h2 id="wixo主题">wixo主题</h2>
+<p>为了增加wiki的layout，着实花了一番功夫。</p>
 <p>最后其实很简单搞定。</p>
 <ol>
 <li>新建wiki页面</li>
 </ol>
 <p><code>hexo new page wiki</code></p>
-<p>然后你会发现source里面多了个目录about，里面有个index.md。其实你也可以手动建立。页面的格式和文章一样。接着把链接加上,在主题下的<code>_config.yml</code>里面的menu一项，添加wiki</p>
+<p>然后你会发现source里面多了个目录about，<a href="http://xn--index-mn1hs99lfr9dzrk.md" target="_blank" rel="noopener">里面有个index.md</a>。其实你也可以手动建立。页面的格式和文章一样。接着把链接加上,在主题下的<code>_config.yml</code>里面的menu一项，添加wiki</p>
 <ol start="2">
 <li>复制wixo中的相关代码</li>
 </ol>
@@ -571,28 +576,37 @@ hexo d #部署到github<span aria-hidden="true" class="line-numbers-rows"><span>
 <li>文章在wiki页面显示方式</li>
 </ol>
 <p>原wixo项目所有文章都会显示。为了避免，参考<a href="http://perthcharles.github.io/2015/01/17/how-to-hack-hexo/" target="_blank" rel="noopener">这篇</a>，在wiki.ejs中15行，37行分布添加</p>
-<pre class="line-numbers language-ejs"><code class="language-ejs"><% if(cat.name.substring(0, 5) == 'wiki-') { %>
-<% } %><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="matery"><a href="#matery" class="headerlink" title="matery"></a>matery</h2><p><a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/#toc-heading-19" target="_blank" rel="noopener">主题属性</a></p>
+<pre class="line-numbers language-language-ejs"><code class="language-language-ejs"><% if(cat.name.substring(0, 5) == 'wiki-') { %>
+<% } %>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="matery">matery</h2>
+<p><a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/#toc-heading-19" target="_blank" rel="noopener">主题属性</a></p>
 <p>颜值即是正义。</p>
 <ul>
 <li>插件</li>
 </ul>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save 
-<span class="token function">npm</span> i -S hexo-prism-plugin
-<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-search --save
-<span class="token function">npm</span> i hexo-permalink-pinyin --save
-<span class="token function">npm</span> i --save hexo-wordcount
-<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-feed --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>首页显示摘要，next主题的官方就有给出<a href="http://theme-next.iissnan.com/faqs.html#首页显示文章摘录" target="_blank" rel="noopener">三种方法</a>，本文详细介绍的就是其中一种。并附上个人的markdown文章头部模板。</p>
-<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><ol>
+<pre class="line-numbers language-language-bash"><code class="language-language-bash">sudo npm install hexo-deployer-git --save 
+npm i -S hexo-prism-plugin
+npm install hexo-generator-search --save
+npm i hexo-permalink-pinyin --save
+npm i --save hexo-wordcount
+npm install hexo-generator-feed --save
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1>写作</h1>
+<h2 id="准备">准备</h2>
+<p>首页显示摘要，next主题的官方就有给出<a href="http://theme-next.iissnan.com/faqs.html#%E9%A6%96%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E6%91%98%E5%BD%95" target="_blank" rel="noopener">三种方法</a>，本文详细介绍的就是其中一种。并附上个人的markdown文章头部模板。</p>
+<h3 id="摘要">摘要</h3>
+<ol>
 <li>在文章中使用\手动进行截断，Hexo 提供的方式(推荐)</li>
 <li>在文章的 <a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="noopener">front-matter</a> 中添加 description，并提供文章摘录</li>
 <li>自动形成摘要，在主题配置文件中添加，默认截取的长度为 150字符，可以根据需要自行设定：</li>
 </ol>
 <pre><code>auto_excerpt:
   enable: true
-  length: 150</code></pre><h3 id="文章模板"><a href="#文章模板" class="headerlink" title="文章模板"></a>文章模板</h3><pre><code>---
+  length: 150
+</code></pre>
+<h3 id="文章模板">文章模板</h3>
+<pre><code>---
 title: git的基本使用
 date: 2017-01-24
 categories:
@@ -603,84 +617,133 @@ tags:
 ---
 
 摘要内容......
-&lt;!-- more --&gt;</code></pre><h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><h3 id="突出重要的文字"><a href="#突出重要的文字" class="headerlink" title="突出重要的文字"></a>突出重要的文字</h3><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>font</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>green<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>xxx<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>font</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+&lt;!-- more --&gt;
+</code></pre>
+<h2 id="样式">样式</h2>
+<h3 id="突出重要的文字">突出重要的文字</h3>
+<pre class="line-numbers language-language-html"><code class="language-language-html"><font color="green">xxx</font>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><font color="green"><strong>该标签可以表示条目的等级，使用的时候一定要注意和后边内容留有空格。</strong></font></p>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">background</span><span class="token punctuation">:</span><span class="token hexcode">#CA8EFF</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&lt;font color="#FDFFFF" size ="2">xxx<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>font</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>`<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-language-html"><code class="language-language-html"><span style="background:#CA8EFF;"><font color="#FDFFFF" size ="2">xxx</font></span>`
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><span style="background:#CA8EFF;"><font color="#FDFFFF" size ="2">主题配置文件</font></span></p>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p><a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/tag-plugins.html</a></p>
+<h3 id="标签">标签</h3>
+<p><a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/tag-plugins.html</a></p>
 <ul>
 <li>引用块</li>
 </ul>
 <p>在文章中插入引言，可包含作者、来源和标题。</p>
 <pre><code>{% blockquote [author[, source]] [link] [source_link_title] %}
 content
-{% endblockquote %}</code></pre><blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
+{% endblockquote %}
+</code></pre>
+<blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
 <footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank" rel="noopener">Welcome to Island Marketing</a></cite></footer></blockquote>
-
 <ul>
 <li>视频</li>
 </ul>
-<pre><code>{% youtube video_id %}</code></pre><h1 id="Troubleshoot"><a href="#Troubleshoot" class="headerlink" title="Troubleshoot"></a>Troubleshoot</h1><h2 id="部署后没有样式"><a href="#部署后没有样式" class="headerlink" title="部署后没有样式"></a>部署后没有样式</h2><p>修改config文件，设置url即可</p>
-<pre class="line-numbers language-md"><code class="language-md">url: [https://XXX.github.io/XXX.github.io/](https://xxx.github.io/XXX.github.io/)
+<pre><code>{% youtube video_id %}
+</code></pre>
+<h1>Troubleshoot</h1>
+<h2 id="部署后没有样式">部署后没有样式</h2>
+<p>修改config文件，设置url即可</p>
+<pre class="line-numbers language-language-md"><code class="language-language-md">url: [https://XXX.github.io/XXX.github.io/](https://xxx.github.io/XXX.github.io/)
 root: /XXX.github.io/
 permalink: :year/:month/:day/:title/
-permalink_defaults:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="博客分类标签layout没有内容"><a href="#博客分类标签layout没有内容" class="headerlink" title="博客分类标签layout没有内容"></a>博客分类标签layout没有内容</h2><p><code>hexo new page xxx</code>  </p>
+permalink_defaults:
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="博客分类标签layout没有内容">博客分类标签layout没有内容</h2>
+<p><code>hexo new page xxx</code></p>
 <p>创建layout页面, categories，tags等。source文件夹下生成index文件。</p>
 <p>需要额外添加，如下：</p>
-<pre class="line-numbers language-md"><code class="language-md">title: tags
+<pre class="line-numbers language-language-md"><code class="language-language-md">title: tags
 date: 2019-11-02 15:42:36
-type: "tags" layout: "tags"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="hexo中插入数学公式"><a href="#hexo中插入数学公式" class="headerlink" title="hexo中插入数学公式"></a>hexo中插入数学公式</h2><pre><code>$ npm install hexo-math --save</code></pre><p>在站点配置文件 <em>_config.yml</em> 中添加：</p>
+type: "tags" layout: "tags"
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="hexo中插入数学公式">hexo中插入数学公式</h2>
+<pre><code>$ npm install hexo-math --save
+</code></pre>
+<p>在站点配置文件 <em>_config.yml</em> 中添加：</p>
 <pre><code>math:
-  engine: &#39;mathjax&#39; # or &#39;katex&#39;
+  engine: 'mathjax' # or 'katex'
   mathjax:
     # src: custom_mathjax_source
     config:
-      # MathJax config</code></pre><p>在 next 主题配置文件中 <em>themes/next-theme/_config.yml</em> 中将 mathJax 设为 true:</p>
+      # MathJax config
+</code></pre>
+<p>在 next 主题配置文件中 <em>themes/next-theme/_config.yml</em> 中将 mathJax 设为 true:</p>
 <pre><code># MathJax Support
 mathjax:
   enable: true
   per_page: false
-  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</code></pre><p><a href="http://stevenshi.me/2017/06/26/hexo-insert-formula/" target="_blank" rel="noopener">http://stevenshi.me/2017/06/26/hexo-insert-formula/</a></p>
-<h2 id="wixo-中支持-Mathjax"><a href="#wixo-中支持-Mathjax" class="headerlink" title="wixo 中支持 Mathjax"></a>wixo 中支持 Mathjax</h2><p>在 hexo 中，你会发现我们不能用 <code>Latex</code> 语法来书写数学公式，这对于书写学术博客来说是很大的不便，因为我们会经常碰到很多的数学公式推导，但是我们可以通过安装第三方库来解决这一问题。</p>
-<p> 第一步： 使用Kramed代替 Marked</p>
+  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+</code></pre>
+<p><a href="http://stevenshi.me/2017/06/26/hexo-insert-formula/" target="_blank" rel="noopener">http://stevenshi.me/2017/06/26/hexo-insert-formula/</a></p>
+<h2 id="wixo-中支持-Mathjax">wixo 中支持 Mathjax</h2>
+<p>在 hexo 中，你会发现我们不能用 <code>Latex</code> 语法来书写数学公式，这对于书写学术博客来说是很大的不便，因为我们会经常碰到很多的数学公式推导，但是我们可以通过安装第三方库来解决这一问题。</p>
+<p>第一步： 使用Kramed代替 Marked</p>
 <p><code>hexo</code> 默认的渲染引擎是 <code>marked</code>，但是 <code>marked</code> 不支持 <code>mathjax</code>。 <code>kramed</code> 是在 <code>marked</code> 的基础上进行修改。我们在工程目录下执行以下命令来安装 <code>kramed</code>.</p>
 <pre><code>npm uninstall hexo-renderer-marked --save
-npm install hexo-renderer-kramed --save</code></pre><p>然后，更改/node_modules/hexo-renderer-kramed/lib/renderer.js，更改：</p>
+npm install hexo-renderer-kramed --save
+</code></pre>
+<p>然后，更改/node_modules/hexo-renderer-kramed/lib/renderer.js，更改：</p>
 <pre><code>// Change inline math rule
 function formatText(text) {
-    // Fit kramed&#39;s rule: $$ + \1 + $$
-    return text.replace(/`\$(.*?)\$`/g, &#39;$$$$$1$$$$&#39;);
-}</code></pre><p>为：</p>
+    // Fit kramed's rule: $$ + \1 + $$
+    return text.replace(/`\$(.*?)\$`/g, '$$$$$1$$$$');
+}
+</code></pre>
+<p>为：</p>
 <pre><code>// Change inline math rule
 function formatText(text) {
     return text;
-}</code></pre><p>第二步: 停止使用 hexo-math</p>
+}
+</code></pre>
+<p>第二步: 停止使用 hexo-math</p>
 <p>首先，如果你已经安装 <code>hexo-math</code>, 请卸载它：</p>
-<pre><code>npm uninstall hexo-math --save</code></pre><p>然后安装 <a href="https://github.com/phoenixcw/hexo-renderer-mathjax" target="_blank" rel="noopener">hexo-renderer-mathjax</a> 包：</p>
-<pre><code>npm install hexo-renderer-mathjax --save</code></pre><p> 第三步: 更新 Mathjax 的 CDN 链接</p>
+<pre><code>npm uninstall hexo-math --save
+</code></pre>
+<p>然后安装 <a href="https://github.com/phoenixcw/hexo-renderer-mathjax" target="_blank" rel="noopener">hexo-renderer-mathjax</a> 包：</p>
+<pre><code>npm install hexo-renderer-mathjax --save
+</code></pre>
+<p>第三步: 更新 Mathjax 的 CDN 链接</p>
 <p>首先，打开/node_modules/hexo-renderer-mathjax/mathjax.html</p>
 <p>然后，把``更改为：</p>
-<pre><code>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;&lt;/script&gt;</code></pre><p>第四步: 更改默认转义规则</p>
-<p>因为 <code>hexo</code> 默认的转义规则会将一些字符进行转义，比如 <code>_</code> 转为 ``, 所以我们需要对默认的规则进行修改.<br>首先， 打开&lt;path-to-your-project/node_modules/kramed/lib/rules、inline.js,</p>
+<pre><code>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>第四步: 更改默认转义规则</p>
+<p>因为 <code>hexo</code> 默认的转义规则会将一些字符进行转义，比如 <code>_</code> 转为 ``, 所以我们需要对默认的规则进行修改.<br>
+首先， 打开&lt;path-to-your-project/node_modules/kramed/lib/rules、inline.js,</p>
 <p>然后，把:</p>
-<pre><code>escape: /^\\([\\`*{}\[\]()#$+\-.!_&gt;])/,</code></pre><p>更改为:</p>
-<pre><code>escape: /^\\([`*\[\]()# +\-.!_&gt;])/,</code></pre><p>把</p>
-<pre><code>em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</code></pre><p>更改为:</p>
-<pre><code>em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</code></pre><p>第五步: 开启mathjax</p>
+<pre><code>escape: /^\\([\\`*{}\[\]()#$+\-.!_&gt;])/,
+</code></pre>
+<p>更改为:</p>
+<pre><code>escape: /^\\([`*\[\]()# +\-.!_&gt;])/,
+</code></pre>
+<p>把</p>
+<pre><code>em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+</code></pre>
+<p>更改为:</p>
+<pre><code>em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+</code></pre>
+<p>第五步: 开启mathjax</p>
 <p>在主题 <code>_config.yml</code> 中开启 Mathjax， 找到 <code>mathjax</code> 字段添加如下代码：</p>
 <pre><code>mathjax:
-    enable: true</code></pre><p>这一步可选，在博客中开启 <code>Mathjax</code>，， 添加以下内容：</p>
+    enable: true
+</code></pre>
+<p>这一步可选，在博客中开启 <code>Mathjax</code>，， 添加以下内容：</p>
 <pre><code>---
 title: Testing Mathjax with Hexo
 category: Uncategorized
 date: 2017/05/03
 mathjax: true
----</code></pre><p>通过以上步骤，我们就可以在 <code>hexo</code> 中使用 <code>Mathjax</code> 来书写数学公式。</p>
-<h1 id="魔改"><a href="#魔改" class="headerlink" title="魔改"></a>魔改</h1><p><a href="https://pengloo53.gitbooks.io/hexo/content/" target="_blank" rel="noopener">https://pengloo53.gitbooks.io/hexo/content/</a></p>
-<h2 id="插入音视频"><a href="#插入音视频" class="headerlink" title="插入音视频"></a>插入音视频</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27530429&auto=1&height=66"></iframe>
-
+---
+</code></pre>
+<p>通过以上步骤，我们就可以在 <code>hexo</code> 中使用 <code>Mathjax</code> 来书写数学公式。</p>
+<h1>魔改</h1>
+<p><a href="https://pengloo53.gitbooks.io/hexo/content/" target="_blank" rel="noopener">https://pengloo53.gitbooks.io/hexo/content/</a></p>
+<h2 id="插入音视频">插入音视频</h2>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27530429&auto=1&height=66"></iframe>
 
             </div>
             <hr/>
@@ -940,20 +1003,27 @@ mathjax: true
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/11/04/2019/matlab-shi-xian-juan-ji-cao-zuo/">
+                <a href="/2019/11/04/2019/shu-mei-pai-shang-shou/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="MATLAB 实现函数卷积演示动画">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">MATLAB 实现函数卷积演示动画</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前置知识图解法求卷积函数的卷积:$$f_1(t) * f_2(t) = \int _{-\infty}^{\infty} f_1(\tau)f_2(t-\tau) d\tau$$
-使用图解法，将卷积运算中一些抽象的关系形象化。具体有以下几个
+                            VNC方式连接
+树莓派VNC服务器
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install tightvncserver
+
+tightvncserver
+#开启服务器
+vn
                         
                     </div>
                     <div class="publish-info">
@@ -990,14 +1060,16 @@ mathjax: true
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用谷歌API训练自己检测器0. 快速开始Setup:
+                            使用谷歌API训练自己检测器
+0. 快速开始
+Setup:
 
 Installation
 
 Quick Start:
 
 Quick Start: Jupyter notebook for off-the-shelf inference
-Quick
+Qui
                         
                     </div>
                     <div class="publish-info">
